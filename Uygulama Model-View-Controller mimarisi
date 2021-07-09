@@ -1,0 +1,21 @@
+Uygulama Model-View-Controller mimarisi kullanılarak hazırlanmıştır.
+
+Model klasörünün altında uygulamada kullanılan veri yapıları yer alır.
+
+Controller klasörünün altında uygulamadaki veri yapıları ile kullanıcı ekranı arasındaki işlemlerin yer aldığı fonksiyonlar yeralır.
+
+View klasörünün altında uygulamada kullanılan ekranların tasarımları yer alır.
+
+Uygulamdaki dosyların tanımları
+
+View -> Main.storyboard
+
+Uygulama ekran tasarımlarının yer aldığı dosyadır.
+
+LauncScreen.storyboard
+
+Açılış ekranı ile ilgili tasarımların yer aldığı dosyadır.
+
+Controller -> LoginViewController
+
+Kullanıcı girişi ile ilgili işlelmlerin yer aldığı dosyadır.
