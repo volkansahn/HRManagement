@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
     }
     
     func performAlert(){
-        let alert = UIAlertController(title: "Sign In Error", message: "Please check your email and password !", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Hata", message: "Sicil ve Sifrenizi kontrol ediniz!", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true)
         
@@ -84,6 +84,8 @@ extension LoginViewController : HRClientDelegate{
             }
         }
     }
+    
+    
     
     func failedWithError(error: Error) {
         DispatchQueue.main.async {
