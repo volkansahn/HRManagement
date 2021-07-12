@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Calisan {
+struct Calisan: Codable {
     let id: String
     let isim: String
     let sifre: String

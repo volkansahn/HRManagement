@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class LoginViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class LoginViewController: UIViewController {
     var rol = ""
     var calisanid = ""
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "")
+    let keychain = KeychainSwift()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,17 +40,15 @@ class LoginViewController: UIViewController {
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == Constants.toApp{
-            let tabBarVC = segue.destination as! UITabBarController
-            let vc = tabBarVC.viewControllers![0] as! CalisanProfileViewController
-            vc.calisan = calisan
-        }else{
-            let tabBarVC = segue.destination as! UITabBarController
-            let vc = tabBarVC.viewControllers![0] as! AdminProflieViewController
-            vc.calisan = calisan
+    func encode<T: Codable>(object: T) -> Data? {
+        do {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            return try encoder.encode(object)
+        } catch let error {
+            print(error.localizedDescription)
         }
-        
+        return nil
     }
     
     func performAlert(){
@@ -66,6 +66,8 @@ extension LoginViewController : HRClientDelegate{
             self.calisanid = response.data.id!
             self.rol = response.data.rol!
             self.calisan = Calisan(id: response.data.id!, isim: response.data.isim!, sifre: "", soyisim: response.data.soyisim!, rol: response.data.rol!, amir_id: "", token: "")
+            let encodedUser = self.encode(object: self.calisan)
+            self.keychain.set(encodedUser!, forKey: "calisan")
             switch self.rol{
             case "calisan" :
                 self.performSegue(withIdentifier: Constants.toApp, sender: nil)

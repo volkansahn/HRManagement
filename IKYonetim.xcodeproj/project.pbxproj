@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		E74FD094269857D300AB34C7 /* GecmisRaporData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FD093269857D300AB34C7 /* GecmisRaporData.swift */; };
 		E74FD09626985A3900AB34C7 /* CalisanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FD09526985A3900AB34C7 /* CalisanData.swift */; };
 		E74FD09826985B3100AB34C7 /* Calisan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FD09726985B3100AB34C7 /* Calisan.swift */; };
+		E78FED16269C548A00712B82 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E78FED15269C548A00712B82 /* KeychainSwift */; };
 		E790F5492674B02300DEEC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F5482674B02300DEEC2A /* AppDelegate.swift */; };
 		E790F54B2674B02300DEEC2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F54A2674B02300DEEC2A /* SceneDelegate.swift */; };
 		E790F5502674B02300DEEC2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E790F54E2674B02300DEEC2A /* Main.storyboard */; };
@@ -99,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78FED16269C548A00712B82 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +220,9 @@
 			dependencies = (
 			);
 			name = IKYonetim;
+			packageProductDependencies = (
+				E78FED15269C548A00712B82 /* KeychainSwift */,
+			);
 			productName = IKYonetim;
 			productReference = E790F5452674B02300DEEC2A /* IKYonetim.app */;
 			productType = "com.apple.product-type.application";
@@ -245,6 +250,9 @@
 				Base,
 			);
 			mainGroup = E790F53C2674B02300DEEC2A;
+			packageReferences = (
+				E78FED14269C548A00712B82 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = E790F5462674B02300DEEC2A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -530,6 +538,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E78FED14269C548A00712B82 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E78FED15269C548A00712B82 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E78FED14269C548A00712B82 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E790F53D2674B02300DEEC2A /* Project object */;
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class AdminProflieViewController: UIViewController {
     
@@ -20,19 +21,25 @@ class AdminProflieViewController: UIViewController {
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "")
     var kalanYillik = ""
     var kalanMazeret = ""
-
+    let keychain = KeychainSwift()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.tabBarController?.navigationItem.hidesBackButton = true
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(Logout))
+        let userData = keychain.getData("calisan")
+        calisan = decode(json: userData!, as: Calisan.self)!
+        
         let isim = calisan.isim
         let soyisim = calisan.soyisim
         let calisanAdSoyad = isim + " " + soyisim
         calisanAdSoyadLabel.text = calisanAdSoyad
         calisanRolLabel.text = calisan.rol
         calisanAmirAdSoyAdLabel.text = ""
-        calisanSicilLabel.text = calisan.id    }
+        calisanSicilLabel.text = calisan.id
+        
+    }
 
     @IBAction func manageUserPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "toManageUser", sender: self)
@@ -42,6 +49,19 @@ class AdminProflieViewController: UIViewController {
         let logOutClient = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
         logOutClient.delegate = self
         logOutClient.logOut()
+    }
+    
+    func decode<T: Decodable>(json: Data, as clazz: T.Type) -> T? {
+        do {
+            let decoder = JSONDecoder()
+            let data = try decoder.decode(T.self, from: json)
+            
+            return data
+        } catch {
+            print("An error occurred while parsing JSON")
+        }
+        
+        return nil
     }
 
 }

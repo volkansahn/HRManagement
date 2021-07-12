@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 class CalisanProfileViewController: UIViewController{
 
@@ -20,10 +21,16 @@ class CalisanProfileViewController: UIViewController{
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "")
     var kalanYillik = ""
     var kalanMazeret = ""
+    let keychain = KeychainSwift()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.navigationItem.hidesBackButton = true
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(Logout))
+        
+        let userData = keychain.getData("calisan")
+        calisan = decode(json: userData!, as: Calisan.self)!
+        
         let isim = calisan.isim
         let soyisim = calisan.soyisim
         let calisanAdSoyad = isim + " " + soyisim
@@ -40,6 +47,18 @@ class CalisanProfileViewController: UIViewController{
         logOutClient.logOut()
     }
    
+    func decode<T: Decodable>(json: Data, as clazz: T.Type) -> T? {
+        do {
+            let decoder = JSONDecoder()
+            let data = try decoder.decode(T.self, from: json)
+            
+            return data
+        } catch {
+            print("An error occurred while parsing JSON")
+        }
+        
+        return nil
+    }
 
 }
 
