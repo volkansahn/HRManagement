@@ -47,7 +47,8 @@ extension AssignDayOffViewController : HRClientDelegate{
     
     func calisanBilgi(_ response: CalisanData) {
         DispatchQueue.main.async {
-            self.calisanAdiLabel.text = response.data.isim  + " " + response.data.soyisim
+            print(response)
+            self.calisanAdiLabel.text = response.data.adi  + " " + response.data.soyadi
         }
     }
     

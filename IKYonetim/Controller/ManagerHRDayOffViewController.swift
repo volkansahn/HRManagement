@@ -29,7 +29,10 @@ class ManagerHRDayOffViewController: UIViewController {
     @IBAction func assignDayOff(_ sender: UIButton) {
         performSegue(withIdentifier: "toAssignDayOff", sender: self)
     }
-
+    @IBAction func requestDayoffPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "toRequestDayOff", sender: self)
+    }
+    
 }
 
 extension ManagerHRDayOffViewController: UITableViewDelegate, UITableViewDataSource {

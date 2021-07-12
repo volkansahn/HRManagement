@@ -192,11 +192,11 @@ class AdminManageUserViewController: UIViewController {
 extension AdminManageUserViewController: HRClientDelegate{
     func calisanBilgi(_ response: CalisanData) {
         DispatchQueue.main.async {
-            self.calisanidResponseLabel.text = response.data.id
-            self.calisanAdiResponseLabel.text = response.data.isim
-            self.calisanSoyadiResponseLabel.text = response.data.soyisim
-            self.calisanRoluResponseLabel.text = response.data.rol
-            self.calisanAmirResponseLabel.text = response.data.amir
+            self.calisanidResponseLabel.text = response.data.kullanici_id
+            self.calisanAdiResponseLabel.text = response.data.adi
+            self.calisanSoyadiResponseLabel.text = response.data.soyadi
+            self.calisanRoluResponseLabel.text = response.data.rol_id
+            self.calisanAmirResponseLabel.text = ""
         }
     }
 }

@@ -66,8 +66,8 @@ class HRSalaryViewController: UIViewController {
 extension HRSalaryViewController: HRClientDelegate{
     func calisanBilgi(_ response: CalisanData) {
         DispatchQueue.main.async {
-            let isim = response.data.isim
-            let soyisim = response.data.soyisim
+            let isim = response.data.adi
+            let soyisim = response.data.soyadi
             let calisanAdSoyad = isim + " " + soyisim
             self.calisanAdSoyadLabel.text = calisanAdSoyad
         }

@@ -64,7 +64,7 @@ class CreateRaporViewController: UIViewController {
 extension CreateRaporViewController : HRClientDelegate{
     func calisanBilgi(_ response: CalisanData) {
         DispatchQueue.main.async {
-            self.calisanAdSoyadLabel.text = response.data.isim  + " " + response.data.soyisim
+            self.calisanAdSoyadLabel.text = response.data.adi  + " " + response.data.soyadi
         }
     }
 }

@@ -2785,6 +2785,9 @@
                                         </constraints>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="İzin Talebi Oluştur"/>
+                                        <connections>
+                                            <action selector="requestDayoffPressed:" destination="hgr-vd-hlJ" eventType="touchUpInside" id="Q5n-Rd-ufD"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

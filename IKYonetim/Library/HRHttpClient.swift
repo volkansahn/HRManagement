@@ -668,15 +668,14 @@ class HRHttpClient {
             */
             var body = [String: Any]()
             body["data"] = ["calisan_id": calisan_id]
-            print(body)
             do {
-                request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
+                request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
 
             } catch {
                 print("JSON serialization failed:  \(error)")
 
             }
-            request.httpMethod = "GET"
+            request.httpMethod = "POST"
             let session = URLSession(configuration: .default)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -969,6 +968,7 @@ class HRHttpClient {
         do {
             let decoder = JSONDecoder()
             let decodedData = try decoder.decode(CalisanData.self, from: data)
+            print(decodedData)
             return decodedData
 
         } catch {
