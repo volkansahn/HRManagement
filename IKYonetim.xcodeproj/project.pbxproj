@@ -45,7 +45,6 @@
 		E790F5872679E63200DEEC2A /* CalisanRaporTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F5852679E63200DEEC2A /* CalisanRaporTableViewCell.swift */; };
 		E790F5882679E63200DEEC2A /* CalisanRaporTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E790F5862679E63200DEEC2A /* CalisanRaporTableViewCell.xib */; };
 		E790F58C267A06FF00DEEC2A /* HRRaporViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F58B267A06FF00DEEC2A /* HRRaporViewController.swift */; };
-		E790F58E267A094600DEEC2A /* AmirDayOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F58D267A094600DEEC2A /* AmirDayOffViewController.swift */; };
 		E790F595267A109400DEEC2A /* RaporApproveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F593267A109400DEEC2A /* RaporApproveTableViewCell.swift */; };
 		E790F596267A109400DEEC2A /* RaporApproveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E790F594267A109400DEEC2A /* RaporApproveTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -90,7 +89,6 @@
 		E790F5852679E63200DEEC2A /* CalisanRaporTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalisanRaporTableViewCell.swift; sourceTree = "<group>"; };
 		E790F5862679E63200DEEC2A /* CalisanRaporTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalisanRaporTableViewCell.xib; sourceTree = "<group>"; };
 		E790F58B267A06FF00DEEC2A /* HRRaporViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRRaporViewController.swift; sourceTree = "<group>"; };
-		E790F58D267A094600DEEC2A /* AmirDayOffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmirDayOffViewController.swift; sourceTree = "<group>"; };
 		E790F593267A109400DEEC2A /* RaporApproveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaporApproveTableViewCell.swift; sourceTree = "<group>"; };
 		E790F594267A109400DEEC2A /* RaporApproveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaporApproveTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,7 +162,6 @@
 				E790F57F2679DD0600DEEC2A /* ManagerHRDayOffViewController.swift */,
 				E790F5812679DD2900DEEC2A /* AssignDayOffViewController.swift */,
 				E790F58B267A06FF00DEEC2A /* HRRaporViewController.swift */,
-				E790F58D267A094600DEEC2A /* AmirDayOffViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -321,7 +318,6 @@
 				E790F56C2679D64F00DEEC2A /* CalisanProfileViewController.swift in Sources */,
 				E74FD094269857D300AB34C7 /* GecmisRaporData.swift in Sources */,
 				E790F5612677780200DEEC2A /* DayOffTableViewCell.swift in Sources */,
-				E790F58E267A094600DEEC2A /* AmirDayOffViewController.swift in Sources */,
 				E790F5822679DD2900DEEC2A /* AssignDayOffViewController.swift in Sources */,
 				E790F57A2679D7BB00DEEC2A /* HRSalaryViewController.swift in Sources */,
 				E790F5492674B02300DEEC2A /* AppDelegate.swift in Sources */,

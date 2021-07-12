@@ -21,5 +21,4 @@ struct User: Decodable {
     let rol: String?
     let bazMaas: Int?
     let yanOdeme: Int?
-
 }

@@ -15,4 +15,6 @@ struct Calisan: Codable {
     let rol: String
     let amir_id: String
     let token: String
+    let bazMaas: Int?
+    let yanOdeme: Int?
 }

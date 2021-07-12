@@ -378,7 +378,7 @@ class HRHttpClient {
         }
     }
 
-    func izinGuncelle(calisan_id: Int, mazeret_izni: Int, yillik_izni: Int) {
+    func izinGuncelle(calisan_id: String, mazeret_izni: Int, yillik_izni: Int) {
         // 1. Create URL
         if let url = URL(string: Constants.izinGuncelleURL) {
 
@@ -569,7 +569,7 @@ class HRHttpClient {
         }
     }
 
-    func maasGuncelle(calisan_id: Int, guncel_maas: Int, guncel_yan_odeme: Int) {
+    func maasGuncelle(calisan_id: String, guncel_maas: Int, guncel_yan_odeme: Int) {
         // 1. Create URL
         if let url = URL(string: Constants.maasGuncelleURL) {
 

@@ -14,11 +14,11 @@ struct CalisanData: Decodable {
 }
 
 struct CalisanBilgi: Decodable {
-    let id: Int
+    let id: String
     let isim: String
     let soyisim: String
     let rol: String
     let bazMaas: Int
     let yanOdeme: Int
-
+    let amir: String
 }

@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userIdTextField: UITextField!
     var rol = ""
     var calisanid = ""
-    var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "")
+    var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)
     let keychain = KeychainSwift()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +65,7 @@ extension LoginViewController : HRClientDelegate{
         DispatchQueue.main.async {
             self.calisanid = response.data.id!
             self.rol = response.data.rol!
-            self.calisan = Calisan(id: response.data.id!, isim: response.data.isim!, sifre: "", soyisim: response.data.soyisim!, rol: response.data.rol!, amir_id: "", token: "")
+            self.calisan = Calisan(id: response.data.id!, isim: response.data.isim!, sifre: "", soyisim: response.data.soyisim!, rol: response.data.rol!, amir_id: "", token: "", bazMaas: response.data.bazMaas, yanOdeme: response.data.yanOdeme)
             let encodedUser = self.encode(object: self.calisan)
             self.keychain.set(encodedUser!, forKey: "calisan")
             switch self.rol{

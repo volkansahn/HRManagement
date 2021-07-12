@@ -18,4 +18,5 @@ struct GecmisRapor: Decodable {
     let raporNedeni: String?
     let raporBaslangic: String?
     let raporBitis: String?
+    let onay: Bool?
 }

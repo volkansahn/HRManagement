@@ -18,7 +18,7 @@ class CalisanProfileViewController: UIViewController{
     @IBOutlet weak var calisanKalanYillikLabel: UILabel!
     var calisaniD = ""
     var calisanToken = ""
-    var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "")
+    var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)
     var kalanYillik = ""
     var kalanMazeret = ""
     let keychain = KeychainSwift()
