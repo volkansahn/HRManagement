@@ -8,10 +8,11 @@
 import Foundation
 
 struct Calisan {
-    let id: Int
+    let id: String
     let isim: String
     let sifre: String
     let soyisim: String
     let rol: String
     let amir_id: String
+    let token: String
 }

@@ -21,14 +21,11 @@ protocol HRClientDelegate {
 }
 
 class HRHttpClient {
-    var userId: String?
+    var kullanici_id: String?
     var authToken: String?
-    var password: String?
+    var sifre: String?
     var firstName: String?
     var lastName: String?
-    var phoneNumber: String?
-    var passwordConfirmation: String?
-    var meetUpdID: Int?
     
     var delegate: HRClientDelegate?
 
@@ -36,15 +33,15 @@ class HRHttpClient {
 
     }
 
-    init(userId: String, password: String) {
+    init(kullanici_id: String, sifre: String) {
 
-        self.userId = userId
-        self.password = password
+        self.kullanici_id = kullanici_id
+        self.sifre = sifre
     }
 
-    init(userId: String, authToken: String) {
+    init(kullanici_id: String, authToken: String) {
 
-        self.userId = userId
+        self.kullanici_id = kullanici_id
         self.authToken = authToken
     }
 
@@ -56,9 +53,8 @@ class HRHttpClient {
             var request = URLRequest(url: url)
             // Request Body
             var body = [String: Any]()
-            body = ["userId": userId!,
-                    "password": password!]
-            print(body)
+            body = ["kullanici_id": kullanici_id!,
+                    "sifre": sifre!]
             do {
                 request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
@@ -104,7 +100,7 @@ class HRHttpClient {
         if let url = URL(string: Constants.logOutURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             request.httpMethod = "DELETE"
             let session = URLSession(configuration: .default)
@@ -140,7 +136,7 @@ class HRHttpClient {
         if let url = URL(string: Constants.gecmisIzinURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             request.httpMethod = "GET"
             let session = URLSession(configuration: .default)
@@ -176,7 +172,7 @@ class HRHttpClient {
         if let url = URL(string: Constants.bekleyenIzinURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             request.httpMethod = "GET"
             let session = URLSession(configuration: .default)
@@ -212,7 +208,7 @@ class HRHttpClient {
         if let url = URL(string: Constants.kalanMazeretURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             request.httpMethod = "GET"
             let session = URLSession(configuration: .default)
@@ -248,7 +244,7 @@ class HRHttpClient {
         if let url = URL(string: Constants.kalanYillikURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             request.httpMethod = "GET"
             let session = URLSession(configuration: .default)
@@ -285,7 +281,7 @@ class HRHttpClient {
         if let url = URL(string: Constants.izinTalebiURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             // Request Body
             var body = [String: Any]()
@@ -339,7 +335,7 @@ class HRHttpClient {
 
             var request = URLRequest(url: url)
             // Request Body
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             var body = [String: Any]()
             body["data"] = ["izin_id": izin_id]
@@ -388,7 +384,7 @@ class HRHttpClient {
 
             var request = URLRequest(url: url)
             // Request Body
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             var body = [String: Any]()
             body["data"] = ["calisan_id": calisan_id,
@@ -439,7 +435,7 @@ class HRHttpClient {
         if let url = URL(string: Constants.gecmisRaporURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             request.httpMethod = "GET"
             let session = URLSession(configuration: .default)
@@ -476,7 +472,7 @@ class HRHttpClient {
         if let url = URL(string: Constants.raporOlusturURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             // Request Body
             var body = [String: Any]()
@@ -530,7 +526,7 @@ class HRHttpClient {
 
             var request = URLRequest(url: url)
             // Request Body
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             var body = [String: Any]()
             body["data"] = ["rapor_id": rapor_id]
@@ -579,7 +575,7 @@ class HRHttpClient {
 
             var request = URLRequest(url: url)
             // Request Body
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             var body = [String: Any]()
             body["data"] = ["calisan_id": calisan_id,
@@ -625,12 +621,12 @@ class HRHttpClient {
         }
     }
 
-    func calisanBilgi(calisan_id: Int) {
+    func calisanBilgi(calisan_id: String) {
         // 1. Create URL
         if let url = URL(string: Constants.calisanBilgiURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             var body = [String: Any]()
             body["data"] = ["calisan_id": calisan_id]
@@ -677,7 +673,7 @@ class HRHttpClient {
         if let url = URL(string: Constants.calisanOlusturURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             // Request Body
             var body = [String: Any]()
@@ -728,13 +724,13 @@ class HRHttpClient {
 
     }
 
-    func calisanGuncelle(calisan_id: Int, calisan: Calisan) {
+    func calisanGuncelle(calisan_id: String, calisan: Calisan) {
         // 1. Create URL
         if let url = URL(string: Constants.calisanGuncelleURL) {
 
             var request = URLRequest(url: url)
             // Request Body
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             var body = [String: Any]()
             body["data"] = [ "id": calisan.id,
@@ -783,12 +779,12 @@ class HRHttpClient {
         }
     }
 
-    func calisanSil(calisan_id: Int) {
+    func calisanSil(calisan_id: String) {
         // 1. Create URL
         if let url = URL(string: Constants.calisanSilURL) {
 
             var request = URLRequest(url: url)
-            request.setValue(userId, forHTTPHeaderField: "X-User-Email")
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             request.httpMethod = "DELETE"
             let session = URLSession(configuration: .default)
@@ -822,6 +818,7 @@ class HRHttpClient {
     // Parsing Data
     func parseLoginJSON(_ data: Data) -> LoginData? {
         do {
+            print(data)
             let decoder = JSONDecoder()
             let decodedData = try decoder.decode(LoginData.self, from: data)
             return decodedData

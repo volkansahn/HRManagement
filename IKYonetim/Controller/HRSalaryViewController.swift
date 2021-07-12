@@ -9,20 +9,22 @@ import UIKit
 
 class HRSalaryViewController: UIViewController {
 
+    @IBOutlet weak var calisanBazMaasLabel: UILabel!
+    @IBOutlet weak var calisanYanOdemeLabel: UILabel!
+    @IBOutlet weak var calisanToplamMaasLabel: UILabel!
+    @IBOutlet weak var calisanIdTextField: UITextField!
+    @IBOutlet weak var calisanGuncelMaasTextField: UITextField!
+    @IBOutlet weak var calisanGuncelYanOdemeTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func calisanAraPressed(_ sender: UIButton) {
     }
-    */
-
+    @IBAction func calisanMaasGuncellePressed(_ sender: UIButton) {
+    }
+    
 }

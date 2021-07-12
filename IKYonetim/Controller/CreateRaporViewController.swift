@@ -9,20 +9,24 @@ import UIKit
 
 class CreateRaporViewController: UIViewController {
 
+    
+    @IBOutlet weak var calisanIdTextField: UITextField!
+    @IBOutlet weak var calisanAdSoyadLabel: UILabel!
+    @IBOutlet weak var raporBaslangicDate: UIDatePicker!
+    @IBOutlet weak var raporBitisDate: UIDatePicker!
+    @IBOutlet weak var raporNedeniTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func calisanAraPressed(_ sender: UIButton) {
     }
-    */
+    
+    @IBAction func raporOlusturPressed(_ sender: UIButton) {
+    }
+    
 
 }

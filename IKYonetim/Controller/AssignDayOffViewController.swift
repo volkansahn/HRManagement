@@ -9,20 +9,22 @@ import UIKit
 
 class AssignDayOffViewController: UIViewController {
 
+    @IBOutlet weak var calisanidTextField: UITextField!
+    
+    @IBOutlet weak var calisanAdiLabel: UILabel!
+    @IBOutlet weak var calisanMazeretTextField: UITextField!
+    @IBOutlet weak var calisanYillikTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func calisanAraPressed(_ sender: UIButton) {
     }
-    */
-
+    
+    @IBAction func izinTanimlaPressed(_ sender: UIButton) {
+    }
+    
 }

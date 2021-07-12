@@ -9,20 +9,17 @@ import UIKit
 
 class DayOffRequestViewController: UIViewController {
 
+    @IBOutlet weak var izinBaslangicDate: UIDatePicker!
+    @IBOutlet weak var izinBitisDate: UIDatePicker!
+    @IBOutlet weak var izinTipiSecim: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func izinTalepPressed(_ sender: UIButton) {
     }
-    */
+    
 
 }

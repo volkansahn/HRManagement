@@ -8,25 +8,82 @@
 import UIKit
 
 class AdminProflieViewController: UIViewController {
+    
+    @IBOutlet weak var calisanSicilLabel: UILabel!
+    @IBOutlet weak var calisanAdSoyadLabel: UILabel!
+    @IBOutlet weak var calisanRolLabel: UILabel!
+    @IBOutlet weak var calisanAmirAdSoyAdLabel: UILabel!
+    @IBOutlet weak var calisanKalanMazeretLabel: UILabel!
+    @IBOutlet weak var calisanKalanYillikLabel: UILabel!
+    var calisaniD = ""
+    var calisanToken = ""
+    var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "")
+    var kalanYillik = ""
+    var kalanMazeret = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        self.tabBarController?.navigationItem.hidesBackButton = true
+        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(Logout))
+        let isim = calisan.isim
+        let soyisim = calisan.soyisim
+        let calisanAdSoyad = isim + " " + soyisim
+        calisanAdSoyadLabel.text = calisanAdSoyad
+        calisanRolLabel.text = calisan.rol
+        calisanAmirAdSoyAdLabel.text = ""
+        calisanSicilLabel.text = calisan.id    }
 
     @IBAction func manageUserPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "toManageUser", sender: self)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func Logout(){
+        let logOutClient = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
+        logOutClient.delegate = self
+        logOutClient.logOut()
     }
-    */
 
+}
+
+extension AdminProflieViewController: HRClientDelegate{
+    
+    func isLogedOut(_ response: LogoutData) {
+        DispatchQueue.main.async {
+            if response.is_success == true{
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
+                newViewController.modalPresentationStyle = .fullScreen
+                self.present(newViewController, animated: true, completion: nil)
+            }else{
+                print("Error")
+            }
+        }
+    
+    }
+    
+    func isLogin(_ response: LoginData) {
+        DispatchQueue.main.async {
+            if response.is_success == true{
+                
+            }
+        }
+        
+    }
+    
+    func kalanYillik(_ response: KalanYillikData) {
+        DispatchQueue.main.async {
+            self.kalanYillik = String(response.data.kalanYillikİzin)
+            self.calisanKalanYillikLabel.text = self.kalanYillik
+        }
+    }
+    
+    func kalanMazeret(_ response: KalanMazeretData) {
+        DispatchQueue.main.async {
+            self.kalanMazeret = String(response.data.kalanMazeretIzin)
+            self.calisanKalanMazeretLabel.text = self.kalanMazeret
+        }
+    }
+    
+    
 }

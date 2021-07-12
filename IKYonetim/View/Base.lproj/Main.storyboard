@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vKy-TC-dXZ">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -11,13 +11,13 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="BYZ-38-t0r" customClass="LoginViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9h5-xr-c1l" userLabel="ContainerView">
-                                <rect key="frame" x="20" y="304" width="374" height="250"/>
+                                <rect key="frame" x="20" y="348" width="374" height="250"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mXd-dE-1ZG" userLabel="UserNameFieldView">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kqo-cx-BU6" userLabel="LogoContainerView">
-                                <rect key="frame" x="0.0" y="54" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="150"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appLogo" translatesAutoresizingMaskIntoConstraints="NO" id="gsJ-bS-Ljz">
                                         <rect key="frame" x="132" y="0.0" width="150" height="150"/>
@@ -79,10 +79,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bba-Ec-FPw" userLabel="SubmitButtonContainerView">
-                                <rect key="frame" x="20" y="594" width="374" height="160"/>
+                                <rect key="frame" x="20" y="638" width="374" height="116"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bca-CM-COd">
-                                        <rect key="frame" x="112" y="55" width="150" height="50"/>
+                                        <rect key="frame" x="112" y="33" width="150" height="50"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="W0D-yW-rlZ"/>
@@ -121,6 +121,7 @@
                             <constraint firstItem="Kqo-cx-BU6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tUx-pV-kRv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="HB0-JK-fDF"/>
                     <connections>
                         <outlet property="userIdTextField" destination="WJu-aq-poH" id="ViS-4P-zL2"/>
                         <outlet property="userPasswordTextField" destination="haw-0e-8iL" id="sJw-H6-KXD"/>
@@ -133,18 +134,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2277" y="1195"/>
+            <point key="canvasLocation" x="-1368.1159420289855" y="1194.6428571428571"/>
         </scene>
         <!--İzin-->
         <scene sceneID="8a2-1z-FgB">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="veW-aD-fbP" customClass="CalisanDayOffViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tim-0b-ZSY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="RcX-IB-Wzq">
-                                <rect key="frame" x="20" y="66.5" width="374" height="60.5"/>
+                                <rect key="frame" x="20" y="154.5" width="374" height="60.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İZİN TALEBİ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqE-XR-hwc">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -164,13 +165,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GEÇMİŞ İZİN TALEPLERİ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M8B-oz-Xrs">
-                                <rect key="frame" x="109" y="157" width="196" height="20.5"/>
+                                <rect key="frame" x="109" y="245" width="196" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ppk-8P-y9s">
-                                <rect key="frame" x="20" y="207.5" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="295.5" width="374" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2v-jk-oak">
                                         <rect key="frame" x="0.0" y="0.0" width="114.5" height="20.5"/>
@@ -196,7 +197,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E92-hy-CUf">
-                                <rect key="frame" x="20" y="238" width="374" height="511"/>
+                                <rect key="frame" x="20" y="326" width="374" height="477"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -213,7 +214,7 @@
                                 </prototypes>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İZİN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zin-xG-hvC">
-                                <rect key="frame" x="186" y="20" width="42.5" height="26.5"/>
+                                <rect key="frame" x="186" y="108" width="42.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -253,11 +254,11 @@
             <objects>
                 <viewController id="iU0-rl-0hq" customClass="DayOffRequestViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CRo-nY-2En">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="iP5-4P-Oun">
-                                <rect key="frame" x="20" y="60.5" width="374" height="295"/>
+                                <rect key="frame" x="20" y="148.5" width="374" height="295"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="OxI-oW-mDj">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="81.5"/>
@@ -319,11 +320,14 @@
                                         <state key="normal" title="Talep Yap">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="izinTalepPressed:" destination="iU0-rl-0hq" eventType="touchUpInside" id="3ax-S1-uLI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İZİN TALEBİ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ai-QB-gmZ">
-                                <rect key="frame" x="159.5" y="20" width="95.5" height="20.5"/>
+                                <rect key="frame" x="159.5" y="108" width="95.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -340,6 +344,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2q5-zC-1hi"/>
+                    <connections>
+                        <outlet property="izinBaslangicDate" destination="5Vf-EL-xQJ" id="i1s-pL-1UN"/>
+                        <outlet property="izinBitisDate" destination="bqy-Bq-Jef" id="Aib-cL-gfq"/>
+                        <outlet property="izinTipiSecim" destination="swY-ge-VM2" id="O16-9w-wRs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cvD-bm-0fd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -385,18 +394,18 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="osg-KR-3OM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-381" y="1021"/>
+            <point key="canvasLocation" x="-381" y="988"/>
         </scene>
         <!--Rapor-->
         <scene sceneID="vSZ-lL-uJO">
             <objects>
                 <viewController title="Rapor" id="vR4-MU-Rna" customClass="CalisanRaporViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6pC-Cd-Lqw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dJY-Ex-7sF">
-                                <rect key="frame" x="20" y="157.5" width="374" height="581.5"/>
+                                <rect key="frame" x="20" y="245.5" width="374" height="547.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -412,7 +421,7 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="udD-Oj-6X9">
-                                <rect key="frame" x="20" y="107" width="374" height="20.5"/>
+                                <rect key="frame" x="20" y="195" width="374" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Form No" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnw-Re-Yqt">
                                         <rect key="frame" x="0.0" y="0.0" width="114.5" height="20.5"/>
@@ -438,13 +447,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RAPOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyx-o5-VaC">
-                                <rect key="frame" x="169.5" y="20" width="75" height="26.5"/>
+                                <rect key="frame" x="169.5" y="108" width="75" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GEÇMİŞ RAPORLAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="en6-5F-cis">
-                                <rect key="frame" x="126" y="66.5" width="162" height="20.5"/>
+                                <rect key="frame" x="126" y="154.5" width="162" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -473,24 +482,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lic-lI-sWQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987" y="1132"/>
+            <point key="canvasLocation" x="1897.1014492753625" y="1131.6964285714284"/>
         </scene>
         <!--Maas-->
         <scene sceneID="LR1-2o-40w">
             <objects>
                 <viewController title="Maas" id="e3l-6H-jQu" customClass="CalisanSalaryViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fr3-ZC-PFJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAAŞ BİLGİSİ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGG-9H-GQw">
-                                <rect key="frame" x="150.5" y="20" width="113.5" height="20.5"/>
+                                <rect key="frame" x="150.5" y="108" width="113.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="yvv-cL-QA5" userLabel="SalaryInfoView">
-                                <rect key="frame" x="20" y="70.5" width="374" height="118"/>
+                                <rect key="frame" x="20" y="158.5" width="374" height="118"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maaş Bilgileri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8a-cJ-6sq">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -570,6 +579,11 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Maaş" image="bitcoinsign.circle.fill" catalog="system" id="v83-aa-cKt"/>
+                    <connections>
+                        <outlet property="calisanBazMaasLabel" destination="9UA-pB-st8" id="qJq-hq-TCf"/>
+                        <outlet property="calisanToplamMaas" destination="zHv-HT-qcK" id="U8k-E5-r8z"/>
+                        <outlet property="calisanYanOdemeLabe" destination="hhD-Tp-tZj" id="b0d-Es-zPC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiW-MW-tSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -580,11 +594,11 @@
             <objects>
                 <viewController id="GnK-s1-K6g" customClass="HRSalaryViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rDe-jG-NaK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j54-bK-dYs">
-                                <rect key="frame" x="20" y="269" width="294" height="62.5"/>
+                                <rect key="frame" x="20" y="357" width="294" height="62.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sicil Numarası" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEh-Qp-yp8">
                                         <rect key="frame" x="0.0" y="0.0" width="294" height="20.5"/>
@@ -602,7 +616,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5ek-IW-le7">
-                                <rect key="frame" x="20" y="361.5" width="374" height="122"/>
+                                <rect key="frame" x="20" y="449.5" width="374" height="122"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="llG-Km-Fz7">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -647,23 +661,26 @@
                                         <state key="normal" title="Maaş Güncelle">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calisanMaasGuncellePressed:" destination="GnK-s1-K6g" eventType="touchUpInside" id="iFf-MF-DkX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAAŞ GÜNCELLE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yld-ra-iXA">
-                                <rect key="frame" x="135.5" y="218.5" width="143.5" height="20.5"/>
+                                <rect key="frame" x="135.5" y="306.5" width="143.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAAŞ BİLGİSİ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R06-jO-oab">
-                                <rect key="frame" x="150.5" y="20" width="113.5" height="20.5"/>
+                                <rect key="frame" x="150.5" y="108" width="113.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="28t-rl-jOG" userLabel="SalaryInfoView">
-                                <rect key="frame" x="20" y="70.5" width="374" height="118"/>
+                                <rect key="frame" x="20" y="158.5" width="374" height="118"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maaş Bilgileri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPt-sd-Acl">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -732,7 +749,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAZ-cN-fJW">
-                                <rect key="frame" x="324" y="298.5" width="70" height="30"/>
+                                <rect key="frame" x="324" y="386.5" width="70" height="30"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="8Dd-2c-NiE"/>
@@ -742,6 +759,9 @@
                                 <state key="normal" title="Ara">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="calisanAraPressed:" destination="GnK-s1-K6g" eventType="touchUpInside" id="3P6-ES-Fvt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="66o-dc-f5b"/>
@@ -765,6 +785,14 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Maaş" image="bitcoinsign.circle.fill" catalog="system" id="WzS-hg-KPH"/>
+                    <connections>
+                        <outlet property="calisanBazMaasLabel" destination="pO6-ts-V8L" id="cgo-6y-Des"/>
+                        <outlet property="calisanGuncelMaasTextField" destination="qwk-1K-2tA" id="rS7-xz-Sly"/>
+                        <outlet property="calisanGuncelYanOdemeTextField" destination="10D-93-DmV" id="rnj-k9-tdD"/>
+                        <outlet property="calisanIdTextField" destination="9U6-1g-EEF" id="tWn-iE-2JT"/>
+                        <outlet property="calisanToplamMaasLabel" destination="th2-l0-xYL" id="YSP-3l-7Gi"/>
+                        <outlet property="calisanYanOdemeLabel" destination="t8V-61-FQU" id="8Y1-Jw-iBN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExS-ic-1w2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -773,19 +801,19 @@
         <!--Profil-->
         <scene sceneID="NBU-hD-ncE">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="noT-T3-fDg" customClass="CalisanProfileViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profil" modalPresentationStyle="fullScreen" id="noT-T3-fDg" customClass="CalisanProfileViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZHb-7p-yku">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KİŞİSEL BİLGİLER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMh-tx-uOd">
-                                <rect key="frame" x="136" y="20" width="142" height="20.5"/>
+                                <rect key="frame" x="136" y="108" width="142" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="BxX-Xu-S4r">
-                                <rect key="frame" x="20" y="70.5" width="374" height="330.5"/>
+                                <rect key="frame" x="20" y="158.5" width="374" height="330.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="XN5-cT-uP8" userLabel="PersonalInfoView">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="83.5"/>
@@ -953,6 +981,16 @@
                     <tabBarItem key="tabBarItem" title="Profil" image="person.fill" catalog="system" id="XvQ-sG-1C3">
                         <color key="badgeColor" red="0.1632860303" green="0.1574316919" blue="0.35615772010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="calisanAdSoyadLabel" destination="iUj-FH-rF3" id="zje-m5-Viu"/>
+                        <outlet property="calisanAmirAdSoyAdLabel" destination="aEU-JU-rVZ" id="9TA-xG-zaA"/>
+                        <outlet property="calisanKalanMazeretLabel" destination="BWs-q7-Lhq" id="2Ai-QQ-eqW"/>
+                        <outlet property="calisanKalanYillikLabel" destination="gs9-ar-QH0" id="FxT-iU-wJm"/>
+                        <outlet property="calisanRolLabel" destination="hfF-iN-dHc" id="dzR-42-mX0"/>
+                        <outlet property="calisanSicilLabel" destination="mVl-iG-uLL" id="ToZ-4d-cuz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wjM-oK-HXq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1027,17 +1065,17 @@
             <objects>
                 <viewController id="UHG-Xr-ciI" customClass="ManagerHRDayOffViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ATF-u5-dWD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GEÇMİŞ İZİN TALEPLERİ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7L-eb-bFM">
-                                <rect key="frame" x="109" y="227.5" width="196" height="20.5"/>
+                                <rect key="frame" x="109" y="315.5" width="196" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jze-Lb-Qkr">
-                                <rect key="frame" x="20" y="66.5" width="374" height="60.5"/>
+                                <rect key="frame" x="20" y="154.5" width="374" height="60.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İZİN TANIMLA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKA-Vr-1Qi">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -1057,7 +1095,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Tt-Cm-TKB">
-                                <rect key="frame" x="0.0" y="268" width="414" height="481"/>
+                                <rect key="frame" x="0.0" y="356" width="414" height="447"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTE-Ny-K85" userLabel="PreviousDayOffs">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
@@ -1118,7 +1156,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9B-FQ-pnL" userLabel="DayOffApproval">
-                                        <rect key="frame" x="0.0" y="279" width="414" height="202"/>
+                                        <rect key="frame" x="0.0" y="279" width="414" height="168"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONAY BEKLEYEN İZİN TALEPLERİ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwa-cc-fup">
                                                 <rect key="frame" x="72.5" y="0.0" width="269.5" height="20.5"/>
@@ -1153,7 +1191,7 @@
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ST1-im-KYh">
-                                                <rect key="frame" x="20" y="71" width="374" height="131"/>
+                                                <rect key="frame" x="20" y="71" width="374" height="97"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
@@ -1189,13 +1227,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İZİN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFS-B4-26n">
-                                <rect key="frame" x="186" y="20" width="42.5" height="26.5"/>
+                                <rect key="frame" x="186" y="108" width="42.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Nni-ws-k7I" userLabel="RequestView">
-                                <rect key="frame" x="20" y="147" width="374" height="60.5"/>
+                                <rect key="frame" x="20" y="235" width="374" height="60.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İZİN TALEBİ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRx-H4-G2M">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -1248,11 +1286,11 @@
             <objects>
                 <viewController id="OBa-fe-SSB" customClass="DoctorRaporViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uq7-QG-2z4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebP-bN-sry">
-                                <rect key="frame" x="20" y="66.5" width="374" height="64.5"/>
+                                <rect key="frame" x="20" y="154.5" width="374" height="33"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Rapor Oluştur">
@@ -1264,19 +1302,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GEÇMİŞ RAPORLAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3C-um-Ctm">
-                                <rect key="frame" x="126" y="161" width="162" height="20.5"/>
+                                <rect key="frame" x="126" y="217.5" width="162" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RAPOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TW5-bx-zwD">
-                                <rect key="frame" x="169.5" y="20" width="75" height="26.5"/>
+                                <rect key="frame" x="169.5" y="108" width="75" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TZ7-fA-vRW">
-                                <rect key="frame" x="0.0" y="211.5" width="414" height="537.5"/>
+                                <rect key="frame" x="0.0" y="268" width="414" height="535"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfN-5K-7QM" userLabel="PreviousDayOffs">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
@@ -1338,7 +1376,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GY5-kM-dGK" userLabel="DayOffApproval">
-                                        <rect key="frame" x="0.0" y="279" width="414" height="258.5"/>
+                                        <rect key="frame" x="0.0" y="279" width="414" height="256"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONAY BEKLEYEN RAPORLAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfa-jP-XNs">
                                                 <rect key="frame" x="89.5" y="0.0" width="235" height="20.5"/>
@@ -1373,7 +1411,7 @@
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bbF-sB-FbW">
-                                                <rect key="frame" x="20" y="71" width="374" height="187.5"/>
+                                                <rect key="frame" x="20" y="71" width="374" height="185"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
@@ -1442,17 +1480,17 @@
             <objects>
                 <viewController id="c8N-Jy-5F5" customClass="CreateRaporViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Uch-i1-pHU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RAPOR OLUŞTUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIk-h8-34w">
-                                <rect key="frame" x="135.5" y="20" width="143.5" height="20.5"/>
+                                <rect key="frame" x="135.5" y="108" width="143.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cws-CB-nRb">
-                                <rect key="frame" x="20" y="70.5" width="294" height="62.5"/>
+                                <rect key="frame" x="20" y="158.5" width="294" height="62.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sicil Numarası" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zd4-Ls-1Y7">
                                         <rect key="frame" x="0.0" y="0.0" width="294" height="20.5"/>
@@ -1470,7 +1508,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Eh-U7-jEF">
-                                <rect key="frame" x="324" y="100" width="70" height="30"/>
+                                <rect key="frame" x="324" y="188" width="70" height="30"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jQE-9b-TJb"/>
@@ -1480,9 +1518,12 @@
                                 <state key="normal" title="Ara">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="calisanAraPressed:" destination="c8N-Jy-5F5" eventType="touchUpInside" id="S7f-ar-Peq"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LVi-ac-Shy">
-                                <rect key="frame" x="20" y="163" width="374" height="290"/>
+                                <rect key="frame" x="20" y="251" width="374" height="290"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yNH-if-4Hm">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -1561,6 +1602,9 @@
                                         <state key="normal" title="Rapor Oluştur">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="raporOlusturPressed:" destination="c8N-Jy-5F5" eventType="touchUpInside" id="xxG-s5-wzY"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1581,6 +1625,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OKP-ep-Hpu"/>
+                    <connections>
+                        <outlet property="calisanAdSoyadLabel" destination="LCh-7e-VVq" id="IE5-YZ-Tm9"/>
+                        <outlet property="calisanIdTextField" destination="56E-Hz-Kol" id="k4o-H6-5lL"/>
+                        <outlet property="raporBaslangicDate" destination="O6C-1o-sJk" id="KnA-dY-MTK"/>
+                        <outlet property="raporBitisDate" destination="4GX-rh-IPp" id="fbB-V4-vrT"/>
+                        <outlet property="raporNedeniTextField" destination="R4s-us-6MQ" id="3l6-Ee-VW8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gb4-SC-XRE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1591,47 +1642,50 @@
             <objects>
                 <viewController id="ucK-oH-zRJ" customClass="AssignDayOffViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FZb-IK-x6R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İZİN TANIMLA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCP-Iq-nFx">
-                                <rect key="frame" x="150.5" y="20" width="113.5" height="20.5"/>
+                                <rect key="frame" x="150.5" y="108" width="113.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6kX-Zk-xNG">
-                                <rect key="frame" x="20" y="70.5" width="294" height="62.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6kX-Zk-xNG">
+                                <rect key="frame" x="20" y="158.5" width="374" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sicil Numarası" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id3-tI-3qz">
-                                        <rect key="frame" x="0.0" y="0.0" width="294" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vLs-Sp-fgK">
-                                        <rect key="frame" x="0.0" y="28.5" width="294" height="34"/>
+                                        <rect key="frame" x="124" y="0.0" width="172" height="30"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vv-9U-FeP">
+                                        <rect key="frame" x="304" y="0.0" width="70" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Xea-i4-3IA"/>
+                                            <constraint firstAttribute="width" constant="70" id="chT-oB-RYW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Ara">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="calisanAraPressed:" destination="ucK-oH-zRJ" eventType="touchUpInside" id="g3K-rm-QmS"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vv-9U-FeP">
-                                <rect key="frame" x="324" y="147" width="70" height="30"/>
-                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Xea-i4-3IA"/>
-                                    <constraint firstAttribute="width" constant="70" id="chT-oB-RYW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Ara">
-                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ixz-yv-bKC">
-                                <rect key="frame" x="20" y="163" width="374" height="166"/>
+                                <rect key="frame" x="20" y="218.5" width="374" height="166"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="W6Z-Fp-Shp">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
@@ -1696,6 +1750,9 @@
                                         <state key="normal" title="İzin Tanımla">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="izinTanimlaPressed:" destination="ucK-oH-zRJ" eventType="touchUpInside" id="DJt-v9-siV"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1704,17 +1761,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6kX-Zk-xNG" firstAttribute="leading" secondItem="lia-Ac-ORg" secondAttribute="leading" constant="20" id="8Bk-GS-s8X"/>
-                            <constraint firstItem="lia-Ac-ORg" firstAttribute="trailing" secondItem="7Vv-9U-FeP" secondAttribute="trailing" constant="20" id="95L-SH-Sgv"/>
-                            <constraint firstItem="7Vv-9U-FeP" firstAttribute="leading" secondItem="6kX-Zk-xNG" secondAttribute="trailing" constant="10" id="JxK-hl-3eD"/>
                             <constraint firstItem="6kX-Zk-xNG" firstAttribute="top" secondItem="KCP-Iq-nFx" secondAttribute="bottom" constant="30" id="Uk3-Ng-ujr"/>
                             <constraint firstItem="ixz-yv-bKC" firstAttribute="top" secondItem="6kX-Zk-xNG" secondAttribute="bottom" constant="30" id="WHH-8D-BxE"/>
                             <constraint firstAttribute="trailing" secondItem="ixz-yv-bKC" secondAttribute="trailing" constant="20" id="gi8-Lx-Vb0"/>
+                            <constraint firstItem="lia-Ac-ORg" firstAttribute="trailing" secondItem="6kX-Zk-xNG" secondAttribute="trailing" constant="20" id="hQG-T3-39Y"/>
                             <constraint firstItem="KCP-Iq-nFx" firstAttribute="centerX" secondItem="FZb-IK-x6R" secondAttribute="centerX" id="jsc-cq-zal"/>
                             <constraint firstItem="ixz-yv-bKC" firstAttribute="leading" secondItem="FZb-IK-x6R" secondAttribute="leading" constant="20" id="pOA-t3-ybf"/>
                             <constraint firstItem="KCP-Iq-nFx" firstAttribute="top" secondItem="lia-Ac-ORg" secondAttribute="top" constant="20" id="rdN-F3-miO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uBv-kp-Gls"/>
+                    <connections>
+                        <outlet property="calisanAdiLabel" destination="zgI-ve-Qxy" id="bHI-PJ-oKL"/>
+                        <outlet property="calisanMazeretTextField" destination="kpv-fD-FiH" id="ngB-75-Y0Y"/>
+                        <outlet property="calisanYillikTextField" destination="iZC-SC-Mpm" id="dup-5M-LL8"/>
+                        <outlet property="calisanidTextField" destination="vLs-Sp-fgK" id="v38-7X-MpR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0i-Fe-0zw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1723,19 +1785,19 @@
         <!--Profil-->
         <scene sceneID="GWJ-DC-eB4">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="OXq-ev-do0" customClass="AdminProflieViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="adminProfil" modalPresentationStyle="fullScreen" id="OXq-ev-do0" customClass="AdminProflieViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gdk-Xm-mb7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KİŞİSEL BİLGİLER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Op3-kU-MQN">
-                                <rect key="frame" x="136" y="20" width="142" height="20.5"/>
+                                <rect key="frame" x="136" y="108" width="142" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="1Zp-yW-zxC">
-                                <rect key="frame" x="20" y="70.5" width="374" height="330.5"/>
+                                <rect key="frame" x="20" y="158.5" width="374" height="330.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="662-Sh-4zI" userLabel="PersonalInfoView">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="83.5"/>
@@ -1890,13 +1952,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KİŞİLERİ YÖNET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYf-EG-fPU">
-                                <rect key="frame" x="142" y="421" width="130.5" height="20.5"/>
+                                <rect key="frame" x="142" y="509" width="130.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebG-td-sio">
-                                <rect key="frame" x="20" y="461.5" width="374" height="30"/>
+                                <rect key="frame" x="20" y="549.5" width="374" height="30"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="KİŞİLERİ YÖNET"/>
@@ -1924,6 +1986,12 @@
                         <color key="badgeColor" red="0.1632860303" green="0.1574316919" blue="0.35615772010000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="calisanAdSoyadLabel" destination="yFr-fm-4Fu" id="6rz-sM-vDd"/>
+                        <outlet property="calisanAmirAdSoyAdLabel" destination="csY-6M-ISJ" id="LM5-g5-68Z"/>
+                        <outlet property="calisanKalanMazeretLabel" destination="cPA-cU-U7m" id="nzg-cO-pKk"/>
+                        <outlet property="calisanKalanYillikLabel" destination="vCg-4S-XBx" id="iPy-UC-3zA"/>
+                        <outlet property="calisanRolLabel" destination="Yh3-xa-yQJ" id="BqH-We-KXy"/>
+                        <outlet property="calisanSicilLabel" destination="8wL-F5-xEF" id="gzZ-Ko-TPv"/>
                         <segue destination="dWn-EJ-Z48" kind="show" identifier="toManageUser" id="xbj-lc-vFz"/>
                     </connections>
                 </viewController>
@@ -1936,28 +2004,49 @@
             <objects>
                 <viewController id="dWn-EJ-Z48" customClass="AdminManageUserViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I86-rE-579">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwQ-j6-KGv">
-                                <rect key="frame" x="20" y="290.5" width="374" height="30"/>
+                                <rect key="frame" x="20" y="466.5" width="374" height="30"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Kişi Oluştur"/>
+                                <connections>
+                                    <action selector="kisiOlusturPressed:" destination="dWn-EJ-Z48" eventType="touchUpInside" id="Ewf-wx-t1g"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KİŞİLERİ YÖNET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUz-ci-yL2">
-                                <rect key="frame" x="142" y="20" width="130.5" height="20.5"/>
+                                <rect key="frame" x="142" y="108" width="130.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IzC-7Q-C09">
-                                <rect key="frame" x="20" y="60.5" width="374" height="210"/>
+                                <rect key="frame" x="20" y="148.5" width="374" height="298"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="C9o-9P-bfp">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="768-MC-t9M">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışan Sicili" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pH-Dk-fA4">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışan Sicili" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw1-po-0mB">
+                                                <rect key="frame" x="0.0" y="0.0" width="176.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OkH-W5-360">
+                                                <rect key="frame" x="197.5" y="0.0" width="176.5" height="34"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="C9o-9P-bfp">
+                                        <rect key="frame" x="0.0" y="44" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışan Şifre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7pH-Dk-fA4">
                                                 <rect key="frame" x="0.0" y="0.0" width="176.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1973,7 +2062,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="E8w-aH-rbp">
-                                        <rect key="frame" x="0.0" y="44" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="88" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışan Adı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-LN-xK6">
                                                 <rect key="frame" x="0.0" y="0.0" width="176.5" height="34"/>
@@ -1991,7 +2080,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="nRH-VG-QPM">
-                                        <rect key="frame" x="0.0" y="88" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="132" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışan Soyadı" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hA-n3-lmI">
                                                 <rect key="frame" x="0.0" y="0.0" width="176.5" height="34"/>
@@ -2009,7 +2098,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="mRP-si-VEB">
-                                        <rect key="frame" x="0.0" y="132" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="176" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışan Rolü" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uql-Fg-Yn0">
                                                 <rect key="frame" x="0.0" y="0.0" width="176.5" height="34"/>
@@ -2026,10 +2115,28 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="GoK-by-rOp">
-                                        <rect key="frame" x="0.0" y="176" width="374" height="34"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="gzg-iR-fqI">
+                                        <rect key="frame" x="0.0" y="220" width="374" height="34"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışan Amiri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PC9-Rl-sKd">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışan Amiri Adi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dG7-l4-zga">
+                                                <rect key="frame" x="0.0" y="0.0" width="176.5" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tg2-R9-AvA">
+                                                <rect key="frame" x="197.5" y="0.0" width="176.5" height="34"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="GoK-by-rOp">
+                                        <rect key="frame" x="0.0" y="264" width="374" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Çalışan Amiri Soyadi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PC9-Rl-sKd">
                                                 <rect key="frame" x="0.0" y="0.0" width="176.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2047,7 +2154,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="3SZ-Xp-gQv">
-                                <rect key="frame" x="20" y="350.5" width="294" height="62.5"/>
+                                <rect key="frame" x="20" y="526.5" width="294" height="62.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sicil Numarası" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUx-eU-Dhi">
                                         <rect key="frame" x="0.0" y="0.0" width="294" height="20.5"/>
@@ -2065,7 +2172,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0V-lg-WyH">
-                                <rect key="frame" x="324" y="379.5" width="70" height="30"/>
+                                <rect key="frame" x="324" y="555.5" width="70" height="30"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LK3-YG-ADX"/>
@@ -2075,9 +2182,12 @@
                                 <state key="normal" title="Ara">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="calisanAraPressed:" destination="dWn-EJ-Z48" eventType="touchUpInside" id="t6a-7m-wxZ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tme-Gf-RH9">
-                                <rect key="frame" x="20" y="423" width="374" height="150"/>
+                                <rect key="frame" x="20" y="599" width="374" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CoW-tL-qcJ">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="22"/>
@@ -2107,6 +2217,9 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal" title="Button" image="pencil.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="calisanSicilEditPressed:" destination="dWn-EJ-Z48" eventType="touchUpInside" id="zDp-SD-amQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2138,6 +2251,9 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal" title="Button" image="pencil.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="calisanAdiEditPressed:" destination="dWn-EJ-Z48" eventType="touchUpInside" id="Rp7-Dw-Oaw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2169,6 +2285,9 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal" title="Button" image="pencil.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="calisanSoyadiEditPressed:" destination="dWn-EJ-Z48" eventType="touchUpInside" id="zgu-Um-Wrz"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2200,6 +2319,9 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal" title="Button" image="pencil.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="calisanRoluEditPressed:" destination="dWn-EJ-Z48" eventType="touchUpInside" id="hGg-Zz-vBT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -2231,16 +2353,22 @@
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <state key="normal" title="Button" image="pencil.circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="calisanAmirEditPressed:" destination="dWn-EJ-Z48" eventType="touchUpInside" id="1iY-lZ-ErU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkT-Jz-8gd">
-                                <rect key="frame" x="50" y="593" width="314" height="30"/>
+                                <rect key="frame" x="50" y="769" width="314" height="30"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Kullanıcı Sil"/>
+                                <connections>
+                                    <action selector="kullaniciSilPressed:" destination="dWn-EJ-Z48" eventType="touchUpInside" id="9WU-lM-qnk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uEd-3f-fDC"/>
@@ -2269,6 +2397,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NRO-1j-3Su"/>
+                    <connections>
+                        <outlet property="amirAdiTextField" destination="Tg2-R9-AvA" id="uZY-ct-NjN"/>
+                        <outlet property="amirSoyadiTextField" destination="n06-us-ByB" id="xqm-rn-DmV"/>
+                        <outlet property="calisanAdiResponseLabel" destination="52Q-wB-YIT" id="jG0-qx-u5r"/>
+                        <outlet property="calisanAdiTextField" destination="Ocj-SO-gzP" id="ur9-x8-Yxa"/>
+                        <outlet property="calisanAmirResponseLabel" destination="AoH-Tc-hLC" id="N4l-cJ-bSJ"/>
+                        <outlet property="calisanRolTextField" destination="zvi-4o-ngZ" id="grH-S2-zm7"/>
+                        <outlet property="calisanRoluResponseLabel" destination="RE3-gW-NFW" id="elg-Qc-bAc"/>
+                        <outlet property="calisanSicilAraTextField" destination="bNk-D9-qPr" id="mNk-K9-mbA"/>
+                        <outlet property="calisanSifreTextField" destination="43y-Bj-khp" id="ZVx-3P-p5I"/>
+                        <outlet property="calisanSoyadiResponseLabel" destination="1N6-MU-hYD" id="5Ub-0T-BME"/>
+                        <outlet property="calisanSoyadiTextField" destination="W2t-RH-UBo" id="S3p-Fb-Cpu"/>
+                        <outlet property="calisanidResponseLabel" destination="Zbb-JJ-vkB" id="YSj-ZH-ede"/>
+                        <outlet property="calisanidTextField" destination="OkH-W5-360" id="fB8-7V-MA7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKz-jp-bvs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2279,17 +2422,17 @@
             <objects>
                 <viewController id="M5Q-rz-2lc" customClass="HRRaporViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aWG-NO-iNG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RAPOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUW-JF-QMQ">
-                                <rect key="frame" x="169.5" y="20" width="75" height="26.5"/>
+                                <rect key="frame" x="169.5" y="108" width="75" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Jj-o1-YJ7">
-                                <rect key="frame" x="0.0" y="66.5" width="414" height="582"/>
+                                <rect key="frame" x="0.0" y="154.5" width="414" height="548"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SR8-5Y-hXd" userLabel="PreviousDayOffs">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
@@ -2360,7 +2503,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hbG-ig-Qvf" userLabel="DayOffApproval">
-                                        <rect key="frame" x="0.0" y="279" width="414" height="303"/>
+                                        <rect key="frame" x="0.0" y="279" width="414" height="269"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONAY BEKLEYEN RAPORLAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1B9-gS-aw1">
                                                 <rect key="frame" x="89.5" y="0.0" width="235" height="20.5"/>
@@ -2395,7 +2538,7 @@
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RQm-7R-qM2">
-                                                <rect key="frame" x="20" y="71" width="374" height="232"/>
+                                                <rect key="frame" x="20" y="71" width="374" height="198"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
@@ -2452,24 +2595,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="695-vk-Hsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784" y="1132"/>
+            <point key="canvasLocation" x="2692.753623188406" y="1131.6964285714284"/>
         </scene>
         <!--İzin-->
         <scene sceneID="Qa7-JW-Eh5">
             <objects>
                 <viewController id="hgr-vd-hlJ" customClass="ManagerHRDayOffViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ecQ-mH-Hh1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GEÇMİŞ İZİN TALEPLERİ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ru-7r-Akj">
-                                <rect key="frame" x="109" y="167" width="196" height="20.5"/>
+                                <rect key="frame" x="109" y="255" width="196" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uZk-iS-std">
-                                <rect key="frame" x="0.0" y="207.5" width="414" height="541.5"/>
+                                <rect key="frame" x="0.0" y="295.5" width="414" height="507.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ffp-VP-f1N" userLabel="PreviousDayOffs">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="269"/>
@@ -2530,7 +2673,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8Q-9x-2Oe" userLabel="DayOffApproval">
-                                        <rect key="frame" x="0.0" y="279" width="414" height="262.5"/>
+                                        <rect key="frame" x="0.0" y="279" width="414" height="228.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ONAY BEKLEYEN İZİN TALEPLERİ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxb-WD-xsg">
                                                 <rect key="frame" x="72.5" y="0.0" width="269.5" height="20.5"/>
@@ -2565,7 +2708,7 @@
                                                 </subviews>
                                             </stackView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="15P-eY-qet">
-                                                <rect key="frame" x="20" y="71" width="374" height="191.5"/>
+                                                <rect key="frame" x="20" y="71" width="374" height="157.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <prototypes>
@@ -2601,13 +2744,13 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İZİN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKY-sd-4RV">
-                                <rect key="frame" x="186" y="20" width="42.5" height="26.5"/>
+                                <rect key="frame" x="186" y="108" width="42.5" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f4h-rl-hpZ" userLabel="RequestView">
-                                <rect key="frame" x="20" y="66.5" width="374" height="80.5"/>
+                                <rect key="frame" x="20" y="154.5" width="374" height="80.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="İZİN TALEBİ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bK-72-N0f">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -2654,12 +2797,30 @@
             </objects>
             <point key="canvasLocation" x="987" y="-964"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="K33-JI-3R0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vKy-TC-dXZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="W6n-LU-owZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ele-ld-qzf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXJ-VG-vOT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2278.2608695652175" y="1194.6428571428571"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="eJ2-qg-6u5"/>
-        <segue reference="yFs-hK-urc"/>
-        <segue reference="DzA-1C-Jfb"/>
-        <segue reference="YMi-zd-FsV"/>
+        <segue reference="hmF-zr-vN9"/>
+        <segue reference="U1S-O1-9gF"/>
+        <segue reference="9zO-Se-jZp"/>
         <segue reference="74u-U7-vkM"/>
     </inferredMetricsTieBreakers>
     <resources>

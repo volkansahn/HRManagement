@@ -14,12 +14,12 @@ struct LoginData: Decodable {
 }
 
 struct User: Decodable {
-    let id: Int
-    let authToken: String
-    let isim: String
-    let soyisim: String
-    let rol: String
-    let bazMaas: Int
-    let yanOdeme: Int
+    let id: String?
+    let authToken: String?
+    let isim: String?
+    let soyisim: String?
+    let rol: String?
+    let bazMaas: Int?
+    let yanOdeme: Int?
 
 }
