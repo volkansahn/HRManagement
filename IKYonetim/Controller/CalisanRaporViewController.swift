@@ -74,4 +74,5 @@ extension CalisanRaporViewController: HRClientDelegate{
             self.pastRaporTableView.reloadData()
         }
     }
+    
 }

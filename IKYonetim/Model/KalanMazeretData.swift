@@ -14,5 +14,5 @@ struct KalanMazeretData: Decodable {
 }
 
 struct KalanMazeretIzin: Decodable {
-    let kalanMazeretIzin: Int
+    let kalan_mazeret_izni: Int
 }

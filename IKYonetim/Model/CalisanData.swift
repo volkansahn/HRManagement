@@ -18,6 +18,8 @@ struct CalisanBilgi: Decodable {
     let adi: String
     let soyadi: String
     let sifre : String
-    let rol_id: String  
+    let rol_id: String
+    var amir_adi: String? = ""
+    var amir_soyadi: String? = ""
 }
 

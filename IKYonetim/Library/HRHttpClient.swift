@@ -18,6 +18,7 @@ protocol HRClientDelegate {
     func kalanYillik(_ response: KalanYillikData)
     func gecmisRapor(_ response: GecmisRaporData)
     func calisanBilgi(_ response: CalisanData)
+    func calisanAraError(error: Error)
 }
 
 class HRHttpClient {
@@ -220,7 +221,7 @@ class HRHttpClient {
         }
     }
 
-    func kalanMazeret() {
+    func kalanMazeret(calisan: Calisan) {
         // 1. Create URL
         if let url = URL(string: Constants.kalanMazeretURL) {
 
@@ -229,10 +230,19 @@ class HRHttpClient {
             request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             */
-            request.httpMethod = "GET"
+            request.httpMethod = "POST"
             let session = URLSession(configuration: .default)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            var body = [String: Any]()
+            body = ["kullanici_id": calisan.id,
+                    "auth_token": calisan.token]
+            do {
+                request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
+            } catch {
+                print("JSON serialization failed:  \(error)")
+
+            }
             // 3. Give Session a task
             let task = session.dataTask(with: request) { (data, response, error) in
                 if error != nil {
@@ -258,7 +268,7 @@ class HRHttpClient {
         }
     }
 
-    func kalanYillik() {
+    func kalanYillik(calisan: Calisan) {
         // 1. Create URL
         if let url = URL(string: Constants.kalanYillikURL) {
 
@@ -267,10 +277,20 @@ class HRHttpClient {
             request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             */
-            request.httpMethod = "GET"
+            request.httpMethod = "POST"
             let session = URLSession(configuration: .default)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            // Request Body
+            var body = [String: Any]()
+            body = ["kullanici_id": calisan.id,
+                    "auth_token": calisan.token]
+            do {
+                request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
+            } catch {
+                print("JSON serialization failed:  \(error)")
+
+            }
             // 3. Give Session a task
             let task = session.dataTask(with: request) { (data, response, error) in
                 if error != nil {
@@ -308,10 +328,10 @@ class HRHttpClient {
             */
             // Request Body
             var body = [String: Any]()
-            body["data"] = ["izin_turu": izin_turu,
+            body["data"] = ["id": kullanici_id,
+                            "izin_turu": izin_turu,
                             "izin_baslangic": izinBaslangic,
                             "izin_bitis": izinBitis]
-            print(body)
             do {
                 request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
@@ -417,7 +437,6 @@ class HRHttpClient {
             body["data"] = ["calisan_id": calisan_id,
                             "mazeret_izni": mazeret_izni,
                             "yillik_izni": yillik_izni]
-            print(body)
             do {
                 request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
@@ -511,7 +530,6 @@ class HRHttpClient {
                             "raporNedeni": raporNedeni,
                             "raporBaslangic": raporBaslangic,
                             "raporBitis": raporBitis]
-            print(body)
             do {
                 request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
@@ -617,7 +635,6 @@ class HRHttpClient {
             body["data"] = ["calisan_id": calisan_id,
                             "guncel_maas": guncel_maas,
                             "guncel_yan_odeme": guncel_yan_odeme]
-            print(body)
             do {
                 request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
@@ -683,7 +700,7 @@ class HRHttpClient {
             let task = session.dataTask(with: request) { (data, response, error) in
                 if error != nil {
                     DispatchQueue.main.async {
-                        self.delegate?.failedWithError(error: error!)
+                        self.delegate?.calisanAraError(error: error!)
                         return
                     }
 
@@ -719,10 +736,9 @@ class HRHttpClient {
             body["data"] = [ "id": calisan.id,
                              "isim": calisan.isim,
                              "sifre": calisan.sifre,
-                             "Soyisim": calisan.soyisim,
+                             "soyisim": calisan.soyisim,
                              "rol": calisan.rol,
                              "amir_id": calisan.amir_id]
-            print(body)
             do {
                 request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
@@ -780,7 +796,6 @@ class HRHttpClient {
                              "Soyisim": calisan.soyisim,
                              "rol": calisan.rol,
                              "amir_id": calisan.amir_id]
-            print(body)
             do {
                 request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
@@ -861,7 +876,6 @@ class HRHttpClient {
     // Parsing Data
     func parseLoginJSON(_ data: Data) -> LoginData? {
         do {
-            print(data)
             let decoder = JSONDecoder()
             let decodedData = try decoder.decode(LoginData.self, from: data)
             return decodedData
@@ -968,11 +982,10 @@ class HRHttpClient {
         do {
             let decoder = JSONDecoder()
             let decodedData = try decoder.decode(CalisanData.self, from: data)
-            print(decodedData)
             return decodedData
 
         } catch {
-            delegate?.failedWithError(error: error)
+            delegate?.calisanAraError(error: error)
             return nil
         }
 
@@ -1021,6 +1034,9 @@ extension HRClientDelegate {
     }
     
     func calisanBilgi(_ response: CalisanData) {
+        
+    }
+    func calisanAraError(error: Error){
         
     }
 

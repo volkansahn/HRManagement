@@ -16,6 +16,10 @@ class ManagerHRDayOffViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
         pastDayOffTableView.register(UINib(nibName: "DayOffTableViewCell", bundle: nil), forCellReuseIdentifier: "pastDayOff")
         pastDayOffTableView.dataSource = self
         pastDayOffTableView.delegate   = self
@@ -23,7 +27,6 @@ class ManagerHRDayOffViewController: UIViewController {
         pendingDayOffTableView.register(UINib(nibName: "ApproveDayOffTableViewCell", bundle: nil), forCellReuseIdentifier: "approveCell")
         pendingDayOffTableView.dataSource = self
         pendingDayOffTableView.delegate   = self
-
     }
 
     @IBAction func assignDayOff(_ sender: UIButton) {

@@ -31,7 +31,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WJu-aq-poH">
                                                 <rect key="frame" x="0.0" y="40.5" width="374" height="59.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -49,7 +49,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="haw-0e-8iL">
                                                 <rect key="frame" x="0.0" y="40.5" width="374" height="59.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -482,7 +482,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lic-lI-sWQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897.1014492753625" y="1131.6964285714284"/>
+            <point key="canvasLocation" x="1964" y="1158"/>
         </scene>
         <!--Maas-->
         <scene sceneID="LR1-2o-40w">
@@ -1265,6 +1265,9 @@
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="İzin Talebi Oluştur"/>
+                                        <connections>
+                                            <action selector="requestDayoffPressed:" destination="UHG-Xr-ciI" eventType="touchUpInside" id="6vq-8c-ziM"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -2614,7 +2617,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="695-vk-Hsu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2692.753623188406" y="1131.6964285714284"/>
+            <point key="canvasLocation" x="2746" y="1195"/>
         </scene>
         <!--İzin-->
         <scene sceneID="Qa7-JW-Eh5">
@@ -2822,7 +2825,7 @@
         <!--Navigation Controller-->
         <scene sceneID="K33-JI-3R0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vKy-TC-dXZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="start" automaticallyAdjustsScrollViewInsets="NO" id="vKy-TC-dXZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="W6n-LU-owZ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -2839,11 +2842,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eJ2-qg-6u5"/>
-        <segue reference="hmF-zr-vN9"/>
-        <segue reference="U1S-O1-9gF"/>
-        <segue reference="yXr-2b-W4D"/>
-        <segue reference="74u-U7-vkM"/>
+        <segue reference="ven-8b-cEz"/>
+        <segue reference="yFs-hK-urc"/>
+        <segue reference="jBM-rY-4zX"/>
+        <segue reference="YMi-zd-FsV"/>
+        <segue reference="Pju-yc-PgE"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="appLogo" width="225" height="225"/>

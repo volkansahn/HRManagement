@@ -14,5 +14,5 @@ struct KalanYillikData: Decodable {
 }
 
 struct KalanYillikIzin: Decodable {
-    let kalanYillikİzin: Int
+    let kalan_yillik_izin: Int
 }

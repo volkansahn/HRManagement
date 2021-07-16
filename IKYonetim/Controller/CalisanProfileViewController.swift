@@ -25,19 +25,31 @@ class CalisanProfileViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.navigationItem.hidesBackButton = true
         self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(Logout))
         
         let userData = keychain.getData("calisan")
         calisan = decode(json: userData!, as: Calisan.self)!
-        
-        let isim = calisan.isim
-        let soyisim = calisan.soyisim
-        let calisanAdSoyad = isim + " " + soyisim
-        calisanAdSoyadLabel.text = calisanAdSoyad
-        calisanRolLabel.text = calisan.rol
-        calisanAmirAdSoyAdLabel.text = ""
-        calisanSicilLabel.text = calisan.id
+        let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
+        client.delegate = self
+        if calisan.rol != "calisan"{
+            let isim = calisan.isim
+            let soyisim = calisan.soyisim
+            let calisanAdSoyad = isim + " " + soyisim
+            calisanAdSoyadLabel.text = calisanAdSoyad
+            calisanRolLabel.text = calisan.rol
+            calisanSicilLabel.text = calisan.id
+            calisanAmirAdSoyAdLabel.text = ""
+        }else{
+            client.calisanBilgi(calisan_id: calisan.id)
+        }
+        client.kalanYillik(calisan: calisan)
+        client.kalanMazeret(calisan: calisan)
         
     }
 
@@ -64,11 +76,32 @@ class CalisanProfileViewController: UIViewController{
 
 extension CalisanProfileViewController: HRClientDelegate{
     
+    func calisanBilgi(_ response: CalisanData) {
+        DispatchQueue.main.async {
+            let isim = self.calisan.isim
+            let soyisim = self.calisan.soyisim
+            let calisanAdSoyad = isim + " " + soyisim
+            self.calisanAdSoyadLabel.text = calisanAdSoyad
+            self.calisanRolLabel.text = self.calisan.rol
+            self.calisanSicilLabel.text = self.calisan.id
+            if response.data.amir_adi != nil && response.data.amir_soyadi != nil{
+                let amir_adi = response.data.amir_adi
+                let amir_soyadi = response.data.amir_soyadi
+                self.calisanAmirAdSoyAdLabel.text = amir_adi! + " " + amir_soyadi!
+            }else{
+                self.calisanAmirAdSoyAdLabel.text = ""
+
+            }
+        }
+        
+    }
+    
+    
     func isLogedOut(_ response: LogoutData) {
         DispatchQueue.main.async {
             if response.is_success == true{
                 let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let newViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
+                let newViewController = storyBoard.instantiateViewController(withIdentifier: "start")
                 newViewController.modalPresentationStyle = .fullScreen
                 self.present(newViewController, animated: true, completion: nil)
             }else{
@@ -89,16 +122,19 @@ extension CalisanProfileViewController: HRClientDelegate{
     
     func kalanYillik(_ response: KalanYillikData) {
         DispatchQueue.main.async {
-            self.kalanYillik = String(response.data.kalanYillikİzin)
+            self.kalanYillik = String(response.data.kalan_yillik_izin)
             self.calisanKalanYillikLabel.text = self.kalanYillik
         }
     }
     
     func kalanMazeret(_ response: KalanMazeretData) {
         DispatchQueue.main.async {
-            self.kalanMazeret = String(response.data.kalanMazeretIzin)
+            self.kalanMazeret = String(response.data.kalan_mazeret_izni)
             self.calisanKalanMazeretLabel.text = self.kalanMazeret
         }
+    }
+    func failedWithError(error: Error) {
+        print(error)
     }
     
     

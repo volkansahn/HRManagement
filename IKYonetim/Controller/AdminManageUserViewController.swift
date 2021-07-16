@@ -65,6 +65,7 @@ class AdminManageUserViewController: UIViewController {
         let newCalisan = Calisan(id: id, isim: adi, sifre: sifre, soyisim: soyadi, rol: rol, amir_id: amir, token: " ", bazMaas: 1, yanOdeme: 1)
         
         let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
+        client.delegate = self
         client.calisanOlustur(calisan: newCalisan)
     }
     //Update
@@ -196,7 +197,31 @@ extension AdminManageUserViewController: HRClientDelegate{
             self.calisanAdiResponseLabel.text = response.data.adi
             self.calisanSoyadiResponseLabel.text = response.data.soyadi
             self.calisanRoluResponseLabel.text = response.data.rol_id
-            self.calisanAmirResponseLabel.text = ""
+            if response.data.amir_adi != nil && response.data.amir_soyadi != nil{
+                let amir_adi = response.data.amir_adi
+                let amir_soyadi = response.data.amir_soyadi
+                self.calisanAmirResponseLabel.text = amir_adi! + " " + amir_soyadi!
+            }else{
+                self.calisanAmirResponseLabel.text = ""
+
+            }
         }
+    }
+    
+    func success(_ response: SuccessData) {
+        DispatchQueue.main.async {
+            print(response)
+            if response.is_success! == false{
+                let alert = UIAlertController(title: "Kullanici Hata", message: "Kullanici Bilgilerini Kontrol Edin !", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+            }
+
+        }
+    }
+    func calisanAraError(error: Error) {
+        let alert = UIAlertController(title: "Calisan Hata", message: "Calisan Bulunamadı !", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
 }

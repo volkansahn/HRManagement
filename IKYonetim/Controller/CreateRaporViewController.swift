@@ -55,7 +55,14 @@ class CreateRaporViewController: UIViewController {
         let dateFormatter = DateFormatter()
         let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
         client.delegate = self
-        client.raporOlustur(raporNedeni: raporNedeni, raporBaslangic: dateFormatter.string(from: raporBaslangicDate.date), raporBitis: dateFormatter.string(from: raporBitisDate.date))
+        if raporNedeni == ""{
+            let alert = UIAlertController(title: "Rapor Hata", message: "Rapor Nedeni Boş Olmaz !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }else{
+            client.raporOlustur(raporNedeni: raporNedeni, raporBaslangic: dateFormatter.string(from: raporBaslangicDate.date), raporBitis: dateFormatter.string(from: raporBitisDate.date))
+        }
+        
     }
     
 
@@ -66,5 +73,11 @@ extension CreateRaporViewController : HRClientDelegate{
         DispatchQueue.main.async {
             self.calisanAdSoyadLabel.text = response.data.adi  + " " + response.data.soyadi
         }
+    }
+    
+    func calisanAraError(error: Error) {
+        let alert = UIAlertController(title: "Calisan Hata", message: "Calisan Bulunamadı !", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
 }

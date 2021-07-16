@@ -27,9 +27,13 @@ class HRSalaryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let userData = keychain.getData("calisan")
         calisan = decode(json: userData!, as: Calisan.self)!
+        let loginClient = HRHttpClient(kullanici_id: calisan.id, sifre: "sifre")
+        loginClient.delegate = self
+        loginClient.login()
         calisanBazMaasLabel.text = String(calisan.bazMaas!)
         calisanYanOdemeLabel.text = String(calisan.yanOdeme!)
         calisanToplamMaasLabel.text = String(calisan.bazMaas! + calisan.yanOdeme!)
+        
        
     }
     
@@ -58,7 +62,14 @@ class HRSalaryViewController: UIViewController {
         let newBazMaas = calisanGuncelMaasTextField.text!
         let newYanOdeme = calisanGuncelYanOdemeTextField.text!
         let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
-        client.maasGuncelle(calisan_id: calisan.id, guncel_maas: Int(newBazMaas)!, guncel_yan_odeme: Int(newYanOdeme)!)
+        if Int(newBazMaas) == nil || Int(newYanOdeme) == nil{
+            let alert = UIAlertController(title: "Maas Hata", message: "Maas Bilgilerini Kontrol Edin !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        }else{
+            client.maasGuncelle(calisan_id: calisanIdTextField.text!, guncel_maas: Int(newBazMaas)!, guncel_yan_odeme: Int(newYanOdeme)!)
+        }
+        
     }
     
 }
@@ -71,5 +82,23 @@ extension HRSalaryViewController: HRClientDelegate{
             let calisanAdSoyad = isim + " " + soyisim
             self.calisanAdSoyadLabel.text = calisanAdSoyad
         }
+    }
+    func isLogin(_ response: LoginData) {
+        DispatchQueue.main.async {
+            self.calisan = Calisan(id: response.data.id!, isim: response.data.isim!, sifre: "", soyisim: response.data.soyisim!, rol: response.data.rol!, amir_id: "", token: "", bazMaas: response.data.bazMaas, yanOdeme: response.data.yanOdeme)
+        }
+    }
+    func failedWithError(error: Error) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Maas Hata", message: "Maas Bilgilerini Kontrol Edin !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            
+        }
+    }
+    func calisanAraError(error: Error) {
+        let alert = UIAlertController(title: "Calisan Hata", message: "Calisan Bulunamadı !", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
     }
 }
