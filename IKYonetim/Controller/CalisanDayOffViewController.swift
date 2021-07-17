@@ -32,6 +32,7 @@ class CalisanDayOffViewController: UIViewController {
         let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
         client.delegate = self
         client.bekleyenIzin()
+        client.gecmisIzin()
     }
     
     @IBAction func dayOffRequestPressed(_ sender: UIButton) {
@@ -80,8 +81,16 @@ extension CalisanDayOffViewController: UITableViewDelegate, UITableViewDataSourc
 extension CalisanDayOffViewController: HRClientDelegate{
     func bekleyenIzin(_ response: BekleyenIzinData) {
         DispatchQueue.main.async {
+            print("bekleyen")
+            print(response)
             self.izin.append(BekleyenIzin(id: response.data.id, izinTuru: response.data.izinTuru, izinBaslangic: response.data.izinBaslangic, izinBitis: response.data.izinBitis, izinYonOnay: response.data.izinYonOnay, izinIkOnay: response.data.izinIkOnay))
             self.pastDayOffTableView.reloadData()
+        }
+    }
+    func gecmisIzin(_ response: GecmisIzinData) {
+        DispatchQueue.main.async {
+            print("gecmis")
+            print(response)
         }
     }
 

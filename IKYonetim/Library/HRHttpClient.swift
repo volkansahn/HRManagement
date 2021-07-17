@@ -153,7 +153,16 @@ class HRHttpClient {
             request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             */
-            request.httpMethod = "GET"
+            var body = [String: Any]()
+            body = ["kullanici_id": kullanici_id!]
+            do {
+                request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
+
+            } catch {
+                print("JSON serialization failed:  \(error)")
+
+            }
+            request.httpMethod = "POST"
             let session = URLSession(configuration: .default)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -192,7 +201,16 @@ class HRHttpClient {
             request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             */
-            request.httpMethod = "GET"
+            var body = [String: Any]()
+            body = ["kullanici_id": kullanici_id!]
+            do {
+                request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
+
+            } catch {
+                print("JSON serialization failed:  \(error)")
+
+            }
+            request.httpMethod = "POST"
             let session = URLSession(configuration: .default)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -903,7 +921,9 @@ class HRHttpClient {
     func parseGecmisIzin(_ data: Data) -> GecmisIzinData? {
         do {
             let decoder = JSONDecoder()
+            print("data")
             let decodedData = try decoder.decode(GecmisIzinData.self, from: data)
+            print(decodedData)
             return decodedData
 
         } catch {

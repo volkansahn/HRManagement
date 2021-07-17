@@ -10,7 +10,7 @@ import Foundation
 struct GecmisIzinData: Decodable {
     let is_success: Bool?
     let messages: String?
-    let data: GecmisIzin
+    let data: [GecmisIzin]
 }
 
 struct GecmisIzin: Decodable {
