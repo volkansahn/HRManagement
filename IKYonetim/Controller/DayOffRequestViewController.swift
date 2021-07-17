@@ -29,10 +29,19 @@ class DayOffRequestViewController: UIViewController {
     }
 
     @IBAction func izinTalepPressed(_ sender: UIButton) {
-        let izinTuru = izinTipiSecim.selectedSegmentIndex
+        let izinSecim = izinTipiSecim.selectedSegmentIndex
+        var izinTuru = ""
+        if izinSecim == 0{
+            izinTuru = "Mazeret"
+        }else{
+            izinTuru = "Yillik"
+        }
         let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+
         let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
         client.delegate = self
+        print(dateFormatter.string(from: izinBaslangicDate.date))
         client.izinTalebi(izin_turu: String(izinTuru), izinBaslangic: dateFormatter.string(from: izinBaslangicDate.date), izinBitis: dateFormatter.string(from: izinBitisDate.date))
     }
     

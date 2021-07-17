@@ -11,7 +11,7 @@ struct Constants {
     static let backendURL = "http://utkuburgaz.com/ik_yonetim_test/login.php"
     static let logOutURL = "http://utkuburgaz.com/ik_yonetim_test/logout.php"
     static let gecmisIzinURL = "http://utkuburgaz.com/ik_yonetim_test/gecmis_izin.php"
-    static let bekleyenIzinURL = ""
+    static let bekleyenIzinURL = "http://utkuburgaz.com/ik_yonetim_test/bekleyen_izin.php"
     static let kalanMazeretURL = "http://utkuburgaz.com/ik_yonetim_test/kalan_mazaret.php"
     static let kalanYillikURL = "http://utkuburgaz.com/ik_yonetim_test/kalan_yillik.php"
     static let izinTalebiURL = "http://utkuburgaz.com/ik_yonetim_test/izin_talebi.php"
