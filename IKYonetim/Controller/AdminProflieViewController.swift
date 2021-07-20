@@ -33,6 +33,7 @@ class AdminProflieViewController: UIViewController {
         
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         let userData = keychain.getData("calisan")
         calisan = decode(json: userData!, as: Calisan.self)!
@@ -42,9 +43,16 @@ class AdminProflieViewController: UIViewController {
         client.kalanYillik(calisan: calisan)
         client.kalanMazeret(calisan: calisan)
         
+        kisileriYonetButton.isEnabled = true
+        kisileriYonetButton.backgroundColor = .orange
+        kisileriYonetButton.tintColor = .white
+        
     }
 
     @IBAction func manageUserPressed(_ sender: UIButton) {
+        kisileriYonetButton.isEnabled = false
+        kisileriYonetButton.backgroundColor = .gray
+        kisileriYonetButton.tintColor = .black
         performSegue(withIdentifier: "toManageUser", sender: self)
     }
 
