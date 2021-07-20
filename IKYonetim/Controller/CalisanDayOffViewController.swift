@@ -13,8 +13,8 @@ class CalisanDayOffViewController: UIViewController {
     @IBOutlet weak var pastDayOffTableView: UITableView!
     let keychain = KeychainSwift()
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)
-    var izin = [BekleyenIzin]()
-    
+    var izin = [GecmisIzin]()
+    @IBOutlet weak var izinTalepButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +28,9 @@ class CalisanDayOffViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let userData = keychain.getData("calisan")
         calisan = decode(json: userData!, as: Calisan.self)!
-        
+        izinTalepButton.isEnabled = true
+        izinTalepButton.backgroundColor = .orange
+        izinTalepButton.tintColor = .black
         let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
         client.delegate = self
         client.bekleyenIzin()
@@ -36,6 +38,9 @@ class CalisanDayOffViewController: UIViewController {
     }
     
     @IBAction func dayOffRequestPressed(_ sender: UIButton) {
+        izinTalepButton.isEnabled = false
+        izinTalepButton.backgroundColor = .gray
+        izinTalepButton.tintColor = .white
         performSegue(withIdentifier: Constants.toRequestDayOff, sender: self)
     }
     
@@ -60,18 +65,14 @@ extension CalisanDayOffViewController: UITableViewDelegate, UITableViewDataSourc
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pastDayOff") as! DayOffTableViewCell
-        
-        cell.formNo.text = String(izin[indexPath.row].id)
-        cell.dayOffType.text = izin[indexPath.row].izinTuru
-        if (izin[indexPath.row].izinIkOnay == true) && (izin[indexPath.row].izinYonOnay == true){
-            cell.status.text = "Onaylandı"
-        }else if (izin[indexPath.row].izinIkOnay == false) && (izin[indexPath.row].izinYonOnay == true){
-            cell.status.text = "Yon.Onay Bekliyor"
-
+        cell.formNo.text = String(izin[indexPath.row].izin_id)
+        cell.dayOffType.text = izin[indexPath.row].izin_turu
+        if (izin[indexPath.row].durum == "onaylandı"){
+            cell.status.text = "Onaylandi"
         }else{
-            cell.status.text = "iK Onay Bekliyor"
+            cell.status.text = "Onay Bekliyor"
+
         }
-            
 
         return cell
     }
@@ -79,18 +80,13 @@ extension CalisanDayOffViewController: UITableViewDelegate, UITableViewDataSourc
 }
 
 extension CalisanDayOffViewController: HRClientDelegate{
-    func bekleyenIzin(_ response: BekleyenIzinData) {
-        DispatchQueue.main.async {
-            print("bekleyen")
-            print(response)
-            self.izin.append(BekleyenIzin(id: response.data.id, izinTuru: response.data.izinTuru, izinBaslangic: response.data.izinBaslangic, izinBitis: response.data.izinBitis, izinYonOnay: response.data.izinYonOnay, izinIkOnay: response.data.izinIkOnay))
-            self.pastDayOffTableView.reloadData()
-        }
-    }
     func gecmisIzin(_ response: GecmisIzinData) {
         DispatchQueue.main.async {
-            print("gecmis")
-            print(response)
+            if response.data.count > self.izin.count{
+                self.izin.removeAll()
+                self.izin.append(contentsOf: response.data)
+                self.pastDayOffTableView.reloadData()
+            }
         }
     }
 

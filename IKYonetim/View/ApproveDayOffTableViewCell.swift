@@ -8,8 +8,9 @@
 import UIKit
 
 class ApproveDayOffTableViewCell: UITableViewCell {
-
+    var approveButtonPressed : (() -> ()) = {}
     @IBOutlet weak var formNo: UILabel!
+    @IBOutlet weak var adSoyadLabel: UILabel!
     @IBOutlet weak var type: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,5 +22,8 @@ class ApproveDayOffTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBAction func approvePressed(_ sender: UIButton) {
+        approveButtonPressed()
+    }
+    
 }

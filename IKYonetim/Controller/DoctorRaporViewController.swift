@@ -12,6 +12,7 @@ class DoctorRaporViewController: UIViewController {
 
     @IBOutlet weak var pastRaporTableView: UITableView!
     @IBOutlet weak var pendingRaporTableView: UITableView!
+    @IBOutlet weak var raporOlusturButton: UIButton!
     let keychain = KeychainSwift()
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)
     var gecmisRapor = [GecmisRapor]()

@@ -20,6 +20,9 @@ class AdminManageUserViewController: UIViewController {
     
     @IBOutlet weak var calisanSicilAraTextField: UITextField!
     
+    @IBOutlet weak var kullaniciSilButton: UIButton!
+    @IBOutlet weak var kisiAraButton: UIButton!
+    @IBOutlet weak var kisiolusturButton: UIButton!
     @IBOutlet weak var calisanidResponseLabel: UILabel!
     @IBOutlet weak var calisanAdiResponseLabel: UILabel!
     @IBOutlet weak var calisanSoyadiResponseLabel: UILabel!

@@ -16,6 +16,8 @@ class CreateRaporViewController: UIViewController {
     @IBOutlet weak var raporBaslangicDate: UIDatePicker!
     @IBOutlet weak var raporBitisDate: UIDatePicker!
     @IBOutlet weak var raporNedeniTextField: UITextField!
+    @IBOutlet weak var calisanAraButton: UIButton!
+    @IBOutlet weak var raporOlusturButton: UIButton!
     let keychain = KeychainSwift()
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)
    

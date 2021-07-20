@@ -1,14 +1,14 @@
 //
-//  ManagerHRDayOffViewController.swift
+//  AmirDayOffViewController.swift
 //  IKYonetim
 //
-//  Created by Volkan on 16.06.2021.
+//  Created by Volkan on 20.07.2021.
 //
 
 import UIKit
 import KeychainSwift
 
-class ManagerHRDayOffViewController: UIViewController {
+class AmirDayOffViewController: UIViewController {
 
     @IBOutlet weak var pastDayOffTableView: UITableView!
     @IBOutlet weak var pendingDayOffTableView: UITableView!
@@ -16,7 +16,6 @@ class ManagerHRDayOffViewController: UIViewController {
     var bekleyenIzin = [BekleyenIzin]()
     let keychain = KeychainSwift()
     @IBOutlet weak var izinTalepButton: UIButton!
-    @IBOutlet weak var izinTanimlaButton: UIButton!
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,9 +40,7 @@ class ManagerHRDayOffViewController: UIViewController {
         izinTalepButton.isEnabled = true
         izinTalepButton.backgroundColor = .orange
         izinTalepButton.tintColor = .black
-        izinTanimlaButton.isEnabled = true
-        izinTanimlaButton.backgroundColor = .orange
-        izinTanimlaButton.tintColor = .black
+    
     }
     
     func decode<T: Decodable>(json: Data, as clazz: T.Type) -> T? {
@@ -59,12 +56,7 @@ class ManagerHRDayOffViewController: UIViewController {
         return nil
     }
 
-    @IBAction func assignDayOff(_ sender: UIButton) {
-        izinTanimlaButton.isEnabled = false
-        izinTanimlaButton.backgroundColor = .gray
-        izinTanimlaButton.tintColor = .white
-        performSegue(withIdentifier: "toAssignDayOff", sender: self)
-    }
+
     @IBAction func requestDayoffPressed(_ sender: UIButton) {
         izinTalepButton.isEnabled = false
         izinTalepButton.backgroundColor = .gray
@@ -74,7 +66,7 @@ class ManagerHRDayOffViewController: UIViewController {
     
 }
 
-extension ManagerHRDayOffViewController: UITableViewDelegate, UITableViewDataSource {
+extension AmirDayOffViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == pastDayOffTableView{
             return gecmisIzin.count
@@ -116,7 +108,7 @@ extension ManagerHRDayOffViewController: UITableViewDelegate, UITableViewDataSou
 
 }
 
-extension ManagerHRDayOffViewController : HRClientDelegate{
+extension AmirDayOffViewController : HRClientDelegate{
     
     func gecmisIzin(_ response: GecmisIzinData) {
         DispatchQueue.main.async {

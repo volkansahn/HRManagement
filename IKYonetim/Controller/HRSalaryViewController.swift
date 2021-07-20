@@ -17,6 +17,8 @@ class HRSalaryViewController: UIViewController {
     @IBOutlet weak var calisanGuncelMaasTextField: UITextField!
     @IBOutlet weak var calisanGuncelYanOdemeTextField: UITextField!
     @IBOutlet weak var calisanAdSoyadLabel: UILabel!
+    @IBOutlet weak var kullaniciAraButton: UIButton!
+    @IBOutlet weak var maasGuncelleButton: UIButton!
     let keychain = KeychainSwift()
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)
     override func viewDidLoad() {
@@ -33,7 +35,12 @@ class HRSalaryViewController: UIViewController {
         calisanBazMaasLabel.text = String(calisan.bazMaas!)
         calisanYanOdemeLabel.text = String(calisan.yanOdeme!)
         calisanToplamMaasLabel.text = String(calisan.bazMaas! + calisan.yanOdeme!)
-        
+        kullaniciAraButton.isEnabled = true
+        kullaniciAraButton.backgroundColor = .orange
+        kullaniciAraButton.tintColor = .white
+        maasGuncelleButton.isEnabled = true
+        maasGuncelleButton.backgroundColor = .orange
+        maasGuncelleButton.tintColor = .white
        
     }
     
@@ -52,6 +59,10 @@ class HRSalaryViewController: UIViewController {
     
     
     @IBAction func calisanAraPressed(_ sender: UIButton) {
+        kullaniciAraButton.isEnabled = false
+        kullaniciAraButton.backgroundColor = .gray
+        kullaniciAraButton.tintColor = .white
+
         let userid = calisanIdTextField.text!
         let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
         client.delegate = self
@@ -59,9 +70,13 @@ class HRSalaryViewController: UIViewController {
     }
     
     @IBAction func calisanMaasGuncellePressed(_ sender: UIButton) {
+        maasGuncelleButton.isEnabled = false
+        maasGuncelleButton.backgroundColor = .gray
+        maasGuncelleButton.tintColor = .black
         let newBazMaas = calisanGuncelMaasTextField.text!
         let newYanOdeme = calisanGuncelYanOdemeTextField.text!
         let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
+        client.delegate = self
         if Int(newBazMaas) == nil || Int(newYanOdeme) == nil{
             let alert = UIAlertController(title: "Maas Hata", message: "Maas Bilgilerini Kontrol Edin !", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
@@ -71,12 +86,18 @@ class HRSalaryViewController: UIViewController {
         }
         
     }
+    func okPressed(){
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
 
 extension HRSalaryViewController: HRClientDelegate{
     func calisanBilgi(_ response: CalisanData) {
         DispatchQueue.main.async {
+            self.kullaniciAraButton.isEnabled = true
+            self.kullaniciAraButton.backgroundColor = .orange
+            self.kullaniciAraButton.tintColor = .white
             let isim = response.data.adi
             let soyisim = response.data.soyadi
             let calisanAdSoyad = isim + " " + soyisim
@@ -90,6 +111,9 @@ extension HRSalaryViewController: HRClientDelegate{
     }
     func failedWithError(error: Error) {
         DispatchQueue.main.async {
+            self.maasGuncelleButton.isEnabled = true
+            self.maasGuncelleButton.backgroundColor = .orange
+            self.maasGuncelleButton.tintColor = .white
             let alert = UIAlertController(title: "Maas Hata", message: "Maas Bilgilerini Kontrol Edin !", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             self.present(alert, animated: true)
@@ -100,5 +124,16 @@ extension HRSalaryViewController: HRClientDelegate{
         let alert = UIAlertController(title: "Calisan Hata", message: "Calisan Bulunamadı !", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true)
+    }
+    func success(_ response: SuccessData) {
+      
+        DispatchQueue.main.async {
+            self.maasGuncelleButton.isEnabled = true
+            self.maasGuncelleButton.backgroundColor = .orange
+            self.maasGuncelleButton.tintColor = .white
+            let alert = UIAlertController(title: "Maas Guncelleme", message: "Maas Guncelleme Yapildi !", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {action in self.okPressed()}))
+            self.present(alert, animated: true)
+        }
     }
 }

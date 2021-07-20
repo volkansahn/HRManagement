@@ -401,6 +401,7 @@ class HRHttpClient {
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             */
             var body = [String: Any]()
+            body["kullanici_id"] = kullanici_id
             body["data"] = ["izin_id": izin_id]
             do {
                 request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
@@ -441,10 +442,9 @@ class HRHttpClient {
         }
     }
 
-    func izinGuncelle(calisan_id: String, mazeret_izni: Int, yillik_izni: Int) {
+    func izinGuncelle(id: String, mazeret_izni: Int, yillik_izni: Int) {
         // 1. Create URL
         if let url = URL(string: Constants.izinGuncelleURL) {
-
             var request = URLRequest(url: url)
             // Request Body
             /*
@@ -452,9 +452,9 @@ class HRHttpClient {
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             */
             var body = [String: Any]()
-            body["data"] = ["calisan_id": calisan_id,
+            body["data"] = ["calisan_id": id,
                             "mazeret_izni": mazeret_izni,
-                            "yillik_izni": yillik_izni]
+                            "yıllık_izin": yillik_izni]
             do {
                 request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
 
@@ -474,6 +474,7 @@ class HRHttpClient {
                 if error != nil {
                     DispatchQueue.main.async {
                         self.delegate?.failedWithError(error: error!)
+                    
                         return
                     }
 
@@ -921,9 +922,7 @@ class HRHttpClient {
     func parseGecmisIzin(_ data: Data) -> GecmisIzinData? {
         do {
             let decoder = JSONDecoder()
-            print("data")
             let decodedData = try decoder.decode(GecmisIzinData.self, from: data)
-            print(decodedData)
             return decodedData
 
         } catch {
@@ -941,6 +940,7 @@ class HRHttpClient {
 
         } catch {
             delegate?.failedWithError(error: error)
+            print(error)
             return nil
         }
 
@@ -980,6 +980,7 @@ class HRHttpClient {
 
         } catch {
             delegate?.failedWithError(error: error)
+            print(error)
             return nil
         }
 

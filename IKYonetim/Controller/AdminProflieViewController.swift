@@ -16,6 +16,7 @@ class AdminProflieViewController: UIViewController {
     @IBOutlet weak var calisanAmirAdSoyAdLabel: UILabel!
     @IBOutlet weak var calisanKalanMazeretLabel: UILabel!
     @IBOutlet weak var calisanKalanYillikLabel: UILabel!
+    @IBOutlet weak var kisileriYonetButton: UIButton!
     var calisaniD = ""
     var calisanToken = ""
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)

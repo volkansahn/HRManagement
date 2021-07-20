@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var userIdTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     var rol = ""
     var calisanid = ""
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)
@@ -23,7 +24,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginPressed(_ sender: UIButton) {
-        
+        loginButton.isEnabled = false
+        loginButton.backgroundColor = .gray
+        loginButton.tintColor = .white
         if let id = userIdTextField.text, let password = userPasswordTextField.text{
             
             //Client object to make request
@@ -88,6 +91,9 @@ extension LoginViewController : HRClientDelegate{
     
     
     func failedWithError(error: Error) {
+        loginButton.isEnabled = true
+        loginButton.backgroundColor = .orange
+        loginButton.tintColor = .black
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Giris Hata", message: "Sicil ve Sifrenizi Kontrol edin !", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))

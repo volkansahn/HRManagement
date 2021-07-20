@@ -32,7 +32,7 @@
                                                 <rect key="frame" x="0.0" y="40.5" width="374" height="59.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -50,8 +50,8 @@
                                                 <rect key="frame" x="0.0" y="40.5" width="374" height="59.5"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -123,6 +123,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HB0-JK-fDF"/>
                     <connections>
+                        <outlet property="loginButton" destination="bca-CM-COd" id="HOQ-0b-Bck"/>
                         <outlet property="userIdTextField" destination="WJu-aq-poH" id="ViS-4P-zL2"/>
                         <outlet property="userPasswordTextField" destination="haw-0e-8iL" id="sJw-H6-KXD"/>
                         <segue destination="Uuz-Vi-U32" kind="show" identifier="toApp" id="7ad-hN-FOU"/>
@@ -241,6 +242,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="İzin" image="sun.max.fill" catalog="system" id="Eme-2p-NHK"/>
                     <connections>
+                        <outlet property="izinTalepButton" destination="9F4-cU-CVc" id="ggi-Tc-h2j"/>
                         <outlet property="pastDayOffTableView" destination="E92-hy-CUf" id="nAW-rD-aDO"/>
                         <segue destination="iU0-rl-0hq" kind="show" identifier="toRequestDayOff" id="9zO-Se-jZp"/>
                     </connections>
@@ -347,6 +349,7 @@
                     <connections>
                         <outlet property="izinBaslangicDate" destination="5Vf-EL-xQJ" id="i1s-pL-1UN"/>
                         <outlet property="izinBitisDate" destination="bqy-Bq-Jef" id="Aib-cL-gfq"/>
+                        <outlet property="izinTalepButton" destination="QK1-UI-Opw" id="PCG-e8-kbo"/>
                         <outlet property="izinTipiSecim" destination="swY-ge-VM2" id="O16-9w-wRs"/>
                     </connections>
                 </viewController>
@@ -811,6 +814,8 @@
                         <outlet property="calisanIdTextField" destination="9U6-1g-EEF" id="tWn-iE-2JT"/>
                         <outlet property="calisanToplamMaasLabel" destination="th2-l0-xYL" id="YSP-3l-7Gi"/>
                         <outlet property="calisanYanOdemeLabel" destination="t8V-61-FQU" id="8Y1-Jw-iBN"/>
+                        <outlet property="kullaniciAraButton" destination="DAZ-cN-fJW" id="23M-R2-Jnh"/>
+                        <outlet property="maasGuncelleButton" destination="PbR-26-GOv" id="4Zb-1y-Zlb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ExS-ic-1w2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1293,6 +1298,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="İzin" image="sun.max.fill" catalog="system" id="gtk-QH-52w"/>
                     <connections>
+                        <outlet property="izinTalepButton" destination="c79-15-AHU" id="cPd-Qb-GWE"/>
+                        <outlet property="izinTanimlaButton" destination="4LL-Tf-3tv" id="xsz-bc-ouv"/>
                         <outlet property="pastDayOffTableView" destination="Wgk-Y9-nPv" id="lVP-75-6XE"/>
                         <outlet property="pendingDayOffTableView" destination="ST1-im-KYh" id="9Ru-ZX-P69"/>
                         <segue destination="iU0-rl-0hq" kind="show" identifier="toRequestDayOff" id="YMi-zd-FsV"/>
@@ -1491,6 +1498,7 @@
                     <connections>
                         <outlet property="pastRaporTableView" destination="3DW-Vl-Qj0" id="0Ru-7a-3cM"/>
                         <outlet property="pendingRaporTableView" destination="bbF-sB-FbW" id="Naw-AM-iWw"/>
+                        <outlet property="raporOlusturButton" destination="ebP-bN-sry" id="FLc-K4-9qY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fd-gC-1ck" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1649,10 +1657,12 @@
                     <navigationItem key="navigationItem" id="OKP-ep-Hpu"/>
                     <connections>
                         <outlet property="calisanAdSoyadLabel" destination="LCh-7e-VVq" id="IE5-YZ-Tm9"/>
+                        <outlet property="calisanAraButton" destination="4Eh-U7-jEF" id="3mB-6D-mwQ"/>
                         <outlet property="calisanIdTextField" destination="56E-Hz-Kol" id="k4o-H6-5lL"/>
                         <outlet property="raporBaslangicDate" destination="O6C-1o-sJk" id="KnA-dY-MTK"/>
                         <outlet property="raporBitisDate" destination="4GX-rh-IPp" id="fbB-V4-vrT"/>
                         <outlet property="raporNedeniTextField" destination="R4s-us-6MQ" id="3l6-Ee-VW8"/>
+                        <outlet property="raporOlusturButton" destination="yef-jy-gaF" id="hrY-0k-yKf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gb4-SC-XRE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1795,9 +1805,11 @@
                     <navigationItem key="navigationItem" id="uBv-kp-Gls"/>
                     <connections>
                         <outlet property="calisanAdiLabel" destination="zgI-ve-Qxy" id="bHI-PJ-oKL"/>
+                        <outlet property="calisanAraButton" destination="7Vv-9U-FeP" id="AdW-T6-eP6"/>
                         <outlet property="calisanMazeretTextField" destination="kpv-fD-FiH" id="ngB-75-Y0Y"/>
                         <outlet property="calisanYillikTextField" destination="iZC-SC-Mpm" id="dup-5M-LL8"/>
                         <outlet property="calisanidTextField" destination="vLs-Sp-fgK" id="v38-7X-MpR"/>
+                        <outlet property="izinTanimlaButton" destination="Z3C-lX-Eky" id="grd-gZ-FeG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0i-Fe-0zw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2014,6 +2026,7 @@
                         <outlet property="calisanKalanYillikLabel" destination="vCg-4S-XBx" id="iPy-UC-3zA"/>
                         <outlet property="calisanRolLabel" destination="Yh3-xa-yQJ" id="BqH-We-KXy"/>
                         <outlet property="calisanSicilLabel" destination="8wL-F5-xEF" id="gzZ-Ko-TPv"/>
+                        <outlet property="kisileriYonetButton" destination="ebG-td-sio" id="Kyy-1c-MhS"/>
                         <segue destination="dWn-EJ-Z48" kind="show" identifier="toManageUser" id="xbj-lc-vFz"/>
                     </connections>
                 </viewController>
@@ -2433,6 +2446,9 @@
                         <outlet property="calisanSoyadiTextField" destination="W2t-RH-UBo" id="S3p-Fb-Cpu"/>
                         <outlet property="calisanidResponseLabel" destination="Zbb-JJ-vkB" id="YSj-ZH-ede"/>
                         <outlet property="calisanidTextField" destination="OkH-W5-360" id="fB8-7V-MA7"/>
+                        <outlet property="kisiAraButton" destination="w0V-lg-WyH" id="HnI-xp-xGr"/>
+                        <outlet property="kisiolusturButton" destination="uwQ-j6-KGv" id="lld-vu-mku"/>
+                        <outlet property="kullaniciSilButton" destination="LkT-Jz-8gd" id="bad-Xz-FBp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKz-jp-bvs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2622,7 +2638,7 @@
         <!--İzin-->
         <scene sceneID="Qa7-JW-Eh5">
             <objects>
-                <viewController id="hgr-vd-hlJ" customClass="ManagerHRDayOffViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hgr-vd-hlJ" customClass="AmirDayOffViewController" customModule="IKYonetim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ecQ-mH-Hh1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2789,7 +2805,7 @@
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="İzin Talebi Oluştur"/>
                                         <connections>
-                                            <action selector="requestDayoffPressed:" destination="hgr-vd-hlJ" eventType="touchUpInside" id="Q5n-Rd-ufD"/>
+                                            <action selector="requestDayoffPressed:" destination="hgr-vd-hlJ" eventType="touchUpInside" id="hPs-MB-eLo"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2813,8 +2829,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="İzin" image="sun.max.fill" catalog="system" id="a6i-cW-T1Y"/>
                     <connections>
-                        <outlet property="pastDayOffTableView" destination="aOM-72-WKl" id="p7i-X7-LFl"/>
-                        <outlet property="pendingDayOffTableView" destination="15P-eY-qet" id="PWf-Tm-rkb"/>
+                        <outlet property="izinTalepButton" destination="wEY-Z6-89W" id="cdS-uW-CFj"/>
+                        <outlet property="pastDayOffTableView" destination="aOM-72-WKl" id="fAi-lh-UeJ"/>
+                        <outlet property="pendingDayOffTableView" destination="15P-eY-qet" id="INS-zc-MFb"/>
                         <segue destination="iU0-rl-0hq" kind="show" identifier="toRequestDayOff" id="yXr-2b-W4D"/>
                     </connections>
                 </viewController>
@@ -2845,7 +2862,7 @@
         <segue reference="ven-8b-cEz"/>
         <segue reference="yFs-hK-urc"/>
         <segue reference="jBM-rY-4zX"/>
-        <segue reference="YMi-zd-FsV"/>
+        <segue reference="yXr-2b-W4D"/>
         <segue reference="Pju-yc-PgE"/>
     </inferredMetricsTieBreakers>
     <resources>

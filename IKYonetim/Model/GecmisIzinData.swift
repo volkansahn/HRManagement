@@ -14,9 +14,9 @@ struct GecmisIzinData: Decodable {
 }
 
 struct GecmisIzin: Decodable {
-    let id: Int
-    let izinTuru: String
-    let izinBaslangic: String
-    let izinBitis: String
+    let izin_id: Int
+    let izin_turu: String
+    let izin_baslangic: String
+    let izin_bitis: String
+    let durum : String
 }
-

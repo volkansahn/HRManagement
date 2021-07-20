@@ -19,6 +19,7 @@
 		E74FD09626985A3900AB34C7 /* CalisanData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FD09526985A3900AB34C7 /* CalisanData.swift */; };
 		E74FD09826985B3100AB34C7 /* Calisan.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74FD09726985B3100AB34C7 /* Calisan.swift */; };
 		E78FED16269C548A00712B82 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E78FED15269C548A00712B82 /* KeychainSwift */; };
+		E78FED1826A6849C00712B82 /* AmirDayOffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FED1726A6849900712B82 /* AmirDayOffViewController.swift */; };
 		E790F5492674B02300DEEC2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F5482674B02300DEEC2A /* AppDelegate.swift */; };
 		E790F54B2674B02300DEEC2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F54A2674B02300DEEC2A /* SceneDelegate.swift */; };
 		E790F5502674B02300DEEC2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E790F54E2674B02300DEEC2A /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 		E74FD093269857D300AB34C7 /* GecmisRaporData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GecmisRaporData.swift; sourceTree = "<group>"; };
 		E74FD09526985A3900AB34C7 /* CalisanData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalisanData.swift; sourceTree = "<group>"; };
 		E74FD09726985B3100AB34C7 /* Calisan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calisan.swift; sourceTree = "<group>"; };
+		E78FED1726A6849900712B82 /* AmirDayOffViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmirDayOffViewController.swift; sourceTree = "<group>"; };
 		E790F5452674B02300DEEC2A /* IKYonetim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IKYonetim.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E790F5482674B02300DEEC2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E790F54A2674B02300DEEC2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				E790F57F2679DD0600DEEC2A /* ManagerHRDayOffViewController.swift */,
 				E790F5812679DD2900DEEC2A /* AssignDayOffViewController.swift */,
 				E790F58B267A06FF00DEEC2A /* HRRaporViewController.swift */,
+				E78FED1726A6849900712B82 /* AmirDayOffViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				E74FD0832698206B00AB34C7 /* HRHttpClient.swift in Sources */,
 				E74FD08C2698341D00AB34C7 /* BekleyenIzinData.swift in Sources */,
 				E790F56E2679D67F00DEEC2A /* CalisanDayOffViewController.swift in Sources */,
+				E78FED1826A6849C00712B82 /* AmirDayOffViewController.swift in Sources */,
 				E790F54B2674B02300DEEC2A /* SceneDelegate.swift in Sources */,
 				E790F5872679E63200DEEC2A /* CalisanRaporTableViewCell.swift in Sources */,
 				E790F595267A109400DEEC2A /* RaporApproveTableViewCell.swift in Sources */,
