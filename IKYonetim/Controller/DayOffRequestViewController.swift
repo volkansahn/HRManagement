@@ -44,7 +44,7 @@ class DayOffRequestViewController: UIViewController {
             izinTuru = "Yillik"
         }
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
 
         let client = HRHttpClient(kullanici_id: calisan.id, authToken: calisan.token)
         client.delegate = self
