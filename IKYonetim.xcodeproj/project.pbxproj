@@ -48,6 +48,8 @@
 		E790F58C267A06FF00DEEC2A /* HRRaporViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F58B267A06FF00DEEC2A /* HRRaporViewController.swift */; };
 		E790F595267A109400DEEC2A /* RaporApproveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E790F593267A109400DEEC2A /* RaporApproveTableViewCell.swift */; };
 		E790F596267A109400DEEC2A /* RaporApproveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E790F594267A109400DEEC2A /* RaporApproveTableViewCell.xib */; };
+		E799607C26ADECAA00437879 /* BekleyenRaporData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E799607B26ADECAA00437879 /* BekleyenRaporData.swift */; };
+		E799607F26ADF8BA00437879 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E799607E26ADF8BA00437879 /* IQKeyboardManagerSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +95,7 @@
 		E790F58B267A06FF00DEEC2A /* HRRaporViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HRRaporViewController.swift; sourceTree = "<group>"; };
 		E790F593267A109400DEEC2A /* RaporApproveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaporApproveTableViewCell.swift; sourceTree = "<group>"; };
 		E790F594267A109400DEEC2A /* RaporApproveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaporApproveTableViewCell.xib; sourceTree = "<group>"; };
+		E799607B26ADECAA00437879 /* BekleyenRaporData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BekleyenRaporData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E78FED16269C548A00712B82 /* KeychainSwift in Frameworks */,
+				E799607F26ADF8BA00437879 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +203,7 @@
 				E74FD093269857D300AB34C7 /* GecmisRaporData.swift */,
 				E74FD09526985A3900AB34C7 /* CalisanData.swift */,
 				E74FD09726985B3100AB34C7 /* Calisan.swift */,
+				E799607B26ADECAA00437879 /* BekleyenRaporData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			name = IKYonetim;
 			packageProductDependencies = (
 				E78FED15269C548A00712B82 /* KeychainSwift */,
+				E799607E26ADF8BA00437879 /* IQKeyboardManagerSwift */,
 			);
 			productName = IKYonetim;
 			productReference = E790F5452674B02300DEEC2A /* IKYonetim.app */;
@@ -252,6 +258,7 @@
 			mainGroup = E790F53C2674B02300DEEC2A;
 			packageReferences = (
 				E78FED14269C548A00712B82 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				E799607D26ADF8BA00437879 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = E790F5462674B02300DEEC2A /* Products */;
 			projectDirPath = "";
@@ -327,6 +334,7 @@
 				E74FD09826985B3100AB34C7 /* Calisan.swift in Sources */,
 				E790F57C2679D80700DEEC2A /* AdminManageUserViewController.swift in Sources */,
 				E790F5782679D77200DEEC2A /* DoctorRaporViewController.swift in Sources */,
+				E799607C26ADECAA00437879 /* BekleyenRaporData.swift in Sources */,
 				E74FD0832698206B00AB34C7 /* HRHttpClient.swift in Sources */,
 				E74FD08C2698341D00AB34C7 /* BekleyenIzinData.swift in Sources */,
 				E790F56E2679D67F00DEEC2A /* CalisanDayOffViewController.swift in Sources */,
@@ -550,6 +558,14 @@
 				minimumVersion = 19.0.0;
 			};
 		};
+		E799607D26ADF8BA00437879 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -557,6 +573,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E78FED14269C548A00712B82 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		E799607E26ADF8BA00437879 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E799607D26ADF8BA00437879 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

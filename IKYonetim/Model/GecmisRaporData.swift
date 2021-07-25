@@ -10,13 +10,12 @@ import Foundation
 struct GecmisRaporData: Decodable {
     let is_success: Bool?
     let messages: String?
-    let data: GecmisRapor
+    let data: [GecmisRapor]
 }
 
 struct GecmisRapor: Decodable {
-    let id: Int?
-    let raporNedeni: String?
-    let raporBaslangic: String?
-    let raporBitis: String?
-    let onay: Bool?
+    let rapor_id: Int?
+    let nedeni: String?
+    let rapor_baslangic: String?
+    let rapor_bitis: String?
 }

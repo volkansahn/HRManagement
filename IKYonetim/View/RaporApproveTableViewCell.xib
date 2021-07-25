@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zup-Z4-Iel">
-                        <rect key="frame" x="0.0" y="10" width="271" height="22"/>
+                        <rect key="frame" x="0.0" y="10" width="298" height="22"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTt-r6-unu">
                                 <rect key="frame" x="0.0" y="0.0" width="114.5" height="22"/>
@@ -30,8 +30,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s96-5p-WVs">
+                                <rect key="frame" x="115.5" y="0.0" width="26" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NTc-dl-hVm">
-                                <rect key="frame" x="115.5" y="0.0" width="129.5" height="22"/>
+                                <rect key="frame" x="142.5" y="0.0" width="129.5" height="22"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="129.5" id="THd-rb-Zwq"/>
@@ -41,7 +47,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0af-Fg-Uns">
-                                <rect key="frame" x="246" y="0.0" width="25" height="22"/>
+                                <rect key="frame" x="273" y="0.0" width="25" height="22"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9b-ao-ZqB" userLabel="Approve">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="22"/>
@@ -52,6 +58,9 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemGreenColor"/>
                                         <state key="normal" title="Button" image="checkmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="approvePressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jOn-hy-Cdz"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -68,6 +77,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="adSoyadLabel" destination="s96-5p-WVs" id="d8g-5x-hY5"/>
                 <outlet property="formNo" destination="MTt-r6-unu" id="bsA-Cf-Qpc"/>
                 <outlet property="reason" destination="NTc-dl-hVm" id="QIP-oh-Dlj"/>
             </connections>

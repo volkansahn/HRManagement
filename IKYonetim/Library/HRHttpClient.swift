@@ -19,6 +19,7 @@ protocol HRClientDelegate {
     func gecmisRapor(_ response: GecmisRaporData)
     func calisanBilgi(_ response: CalisanData)
     func calisanAraError(error: Error)
+    func bekleyenRapor(_ response : BekleyenRaporData)
 }
 
 class HRHttpClient {
@@ -504,7 +505,17 @@ class HRHttpClient {
             request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
             request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
             */
-            request.httpMethod = "GET"
+            var body = [String: Any]()
+            body["kullanici_id"] = kullanici_id
+            
+            do {
+                request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
+
+            } catch {
+                print("JSON serialization failed:  \(error)")
+
+            }
+            request.httpMethod = "POST"
             let session = URLSession(configuration: .default)
             request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -588,6 +599,55 @@ class HRHttpClient {
         }
 
     }
+    
+    func bekleyenRapor() {
+        // 1. Create URL
+        if let url = URL(string: Constants.bekleyenRaporURL) {
+
+            var request = URLRequest(url: url)
+            
+            /*
+            request.setValue(kullanici_id, forHTTPHeaderField: "X-User-Email")
+            request.setValue(authToken, forHTTPHeaderField: "X-User-Token")
+            */
+            var body = [String: Any]()
+            body = ["kullanici_id": kullanici_id!]
+            do {
+                request.httpBody  = try JSONSerialization.data(withJSONObject: body, options: [])
+
+            } catch {
+                print("JSON serialization failed:  \(error)")
+
+            }
+            request.httpMethod = "POST"
+            let session = URLSession(configuration: .default)
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            // 3. Give Session a task
+            let task = session.dataTask(with: request) { (data, response, error) in
+                if error != nil {
+                    DispatchQueue.main.async {
+                        self.delegate?.failedWithError(error: error!)
+                        return
+                    }
+
+                }
+                if let safeData = data {
+                    DispatchQueue.main.async {
+                        if let response = self.parseBekleyenRapor(safeData) {
+                            // Who has the delegate run signInSuccess method
+                            self.delegate?.bekleyenRapor(response)
+                        }
+                    }
+
+                }
+
+            }
+            // 4. Start Task
+            task.resume()
+        }
+    }
+
 
     func raporOnayla(rapor_id: Int) {
         // 1. Create URL
@@ -945,6 +1005,20 @@ class HRHttpClient {
         }
 
     }
+    
+    func parseBekleyenRapor(_ data: Data) -> BekleyenRaporData? {
+        do {
+            let decoder = JSONDecoder()
+            let decodedData = try decoder.decode(BekleyenRaporData.self, from: data)
+            return decodedData
+
+        } catch {
+            delegate?.failedWithError(error: error)
+            print(error)
+            return nil
+        }
+
+    }
 
     func parseKalanMazeret(_ data: Data) -> KalanMazeretData? {
         do {
@@ -1060,5 +1134,8 @@ extension HRClientDelegate {
     func calisanAraError(error: Error){
         
     }
-
+    
+    func bekleyenRapor(_ response : BekleyenRaporData){
+        
+    }
 }

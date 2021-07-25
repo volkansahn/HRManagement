@@ -15,8 +15,8 @@ class DoctorRaporViewController: UIViewController {
     @IBOutlet weak var raporOlusturButton: UIButton!
     let keychain = KeychainSwift()
     var calisan = Calisan(id: "", isim: "", sifre: "", soyisim: "", rol: "", amir_id: "", token: "", bazMaas: 1, yanOdeme: 1)
-    var gecmisRapor = [GecmisRapor]()
-    
+    var rapor = [GecmisRapor]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,18 +58,18 @@ class DoctorRaporViewController: UIViewController {
 
 extension DoctorRaporViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return gecmisRapor.count
+        return rapor.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "calisanRaporCell") as! CalisanRaporTableViewCell
-        cell.formNo.text = String(gecmisRapor[indexPath.row].id!)
-        cell.raporNedeni.text = gecmisRapor[indexPath.row].raporNedeni
-        if gecmisRapor[indexPath.row].onay == true{
-            cell.status.text = "Onaylandı"
-            
+        cell.formNo.text = String(rapor[indexPath.row].rapor_id!)
+        cell.raporNedeni.text = rapor[indexPath.row].nedeni
+        if (rapor[indexPath.row].nedeni == "onaylandı"){
+            cell.status.text = "Onaylandi"
         }else{
-            cell.status.text = "iK Onay Bekliyor"
+            cell.status.text = "Onay Bekliyor"
+
         }
         return cell
     }
@@ -80,7 +80,7 @@ extension DoctorRaporViewController: UITableViewDelegate, UITableViewDataSource 
 extension DoctorRaporViewController: HRClientDelegate{
     func gecmisRapor(_ response: GecmisRaporData) {
         DispatchQueue.main.async {
-            self.gecmisRapor.append(GecmisRapor(id: response.data.id, raporNedeni: response.data.raporNedeni, raporBaslangic: response.data.raporBaslangic, raporBitis: response.data.raporBitis, onay: response.data.onay))
+            self.rapor.append(contentsOf: response.data)
             self.pastRaporTableView.reloadData()
         }
     }

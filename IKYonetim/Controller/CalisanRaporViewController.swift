@@ -53,15 +53,15 @@ extension CalisanRaporViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "calisanRaporCell") as! CalisanRaporTableViewCell
-
-        cell.formNo.text = String(rapor[indexPath.row].id!)
-        cell.raporNedeni.text = rapor[indexPath.row].raporNedeni
-        if rapor[indexPath.row].onay == true{
-            cell.status.text = "Onaylandı"
-
+        cell.formNo.text = String(rapor[indexPath.row].rapor_id!)
+        cell.raporNedeni.text = rapor[indexPath.row].nedeni
+        if (rapor[indexPath.row].nedeni == "onaylandı"){
+            cell.status.text = "Onaylandi"
         }else{
-            cell.status.text = "iK Onay Bekliyor"
+            cell.status.text = "Onay Bekliyor"
+
         }
+
         return cell
     }
 
@@ -70,8 +70,11 @@ extension CalisanRaporViewController: UITableViewDelegate, UITableViewDataSource
 extension CalisanRaporViewController: HRClientDelegate{
     func gecmisRapor(_ response: GecmisRaporData) {
         DispatchQueue.main.async {
-            self.rapor.append(GecmisRapor(id: response.data.id, raporNedeni: response.data.raporNedeni, raporBaslangic: response.data.raporBaslangic, raporBitis: response.data.raporBitis, onay: response.data.onay))
-            self.pastRaporTableView.reloadData()
+            if response.data.count > self.rapor.count{
+                self.rapor.removeAll()
+                self.rapor.append(contentsOf: response.data)
+                self.pastRaporTableView.reloadData()
+            }
         }
     }
     
